@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>NEXERA - ECE Symposium</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ADDING MISSING WORKSHOP STYLE FOR DIFFERENTIATION */
+        .card-workshop::before { background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, transparent 40%, transparent 60%, rgba(14, 165, 233, 0.15) 100%); }
+        .card-workshop:hover::before { background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, transparent 40%, transparent 60%, rgba(14, 165, 233, 0.3) 100%); }
+    </style>
+</head>
+
+<body class="relative">
+
+    <div class="hud-corner tl"></div>
+    <div class="hud-corner tr"></div>
+    <div class="hud-corner bl"></div>
+    <div class="hud-corner br"></div>
+    <div class="scan-line"></div>
+
+    <canvas id="nebula-canvas"></canvas>
+    <div class="glow-background"></div>
+
+    <nav id="main-nav" class="fixed top-6 left-6 z-50 glass-nav">
+        <button id="menu-btn" class="interactable flex items-center justify-center h-12 w-12 rounded-full hover:bg-white/10 ">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h10"/>
+            </svg>
+        </button>
+
+        <div id="menu-popup" class="glass-panel absolute left-0 top-14 w-48 rounded-xl p-2 flex flex-col space-y-1 opacity-0 pointer-events-none transition-all duration-300 transform scale-90 origin-top-left">
+            <a href="#about" class="interactable nav-link block px-4 py-3 rounded-lg hover:bg-blue-600/20 hover:text-white text-gray-300 text-sm font-semibold transition-all">About</a>
+            <a href="#events" class="interactable nav-link block px-4 py-3 rounded-lg hover:bg-blue-600/20 hover:text-white text-gray-300 text-sm font-semibold transition-all">Events</a>
+            <a href="#timeline" class="interactable nav-link block px-4 py-3 rounded-lg hover:bg-blue-600/20 hover:text-white text-gray-300 text-sm font-semibold transition-all">Flow</a>
+            <a href="#sponsors" class="interactable nav-link block px-4 py-3 rounded-lg hover:bg-blue-600/20 hover:text-white text-gray-300 text-sm font-semibold transition-all">Sponsors</a>
+            <a href="#contact" class="interactable nav-link block px-4 py-3 rounded-lg hover:bg-blue-600/20 hover:text-white text-gray-300 text-sm font-semibold transition-all">Contact</a>
+        </div>
+    </nav>
+   <div id="top-right-suite" class="fixed top-6 right-6 z-50 flex items-center gap-3 sm:gap-6">
+        <div class="logo-container">
+            <img src="nexera_logo.png" alt="CIT Logo" class="responsive-logo">
+        </div>
+        
+    </div>        
+    <header id="home"> 
+        <div id="header-content" class="text-center z-10 flex flex-col items-center">
+            <!-- <div class="flex justify-center items-center gap-6 mb-4">
+                <img src="cit_logo.png" alt="CIT" class="h-10 w-auto ">
+            </div> -->
+    <div class="anim-text-slide">
+                <h2 class="text-xs md:text-sm font-bold tracking-[0.2em] text-blue-400 uppercase mb-2 tech-font">
+                    Coimbatore Institute of Technology
+                </h2>
+                <h3 class="text-sm md:text-base font-semibold tracking-wide text-gray-400 uppercase mb-6">
+                    Department of Electronics & Communication Engineering
+                </h3>
+            </div>
+            <h1 class="anim-title text-6xl md:text-8xl lg:text-9xl font-black orbitron tracking-tighter crisp-title mb-6">
+                NEXERA
+            </h1>
+            <div class="anim-btn flex flex-col items-center space-y-20">
+                <a href="#events" class="interactable group relative px-8 py-3 rounded-full bg-transparent border border-blue-400 text-blue-400 font-semibold overflow-hidden transition-all hover:text-white mt-4 hover:shadow-[0_0_30px_rgba(37,99,235,0.5)]">
+                    <div class="absolute inset-0 w-0 bg-blue-600 transition-all duration-[250ms] ease-out group-hover:w-full opacity-90"></div>
+                    <span class="relative z-10 flex items-center gap-2">Explore Events</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-20">
+        
+        <section id="about" class="container mx-auto px-6 py-24 reveal-container">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/3 relative text-center md:text-right reveal-child">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white orbitron">ABOUT US</h2>
+                </div>
+                <div class="w-full md:w-2/3 text-left">
+                    <p class="text-gray-300 text-lg leading-relaxed font-light border-l-2 border-blue-500/50 pl-6 mb-8 reveal-child">
+                       NEXERA is the annual technical symposium of the Department of Electronics and Communication Engineering at CIT, celebrating innovation and the next era of technology. It brings together students and experts through technical events, paper presentations, workshops, and talks focused on emerging technologies. NEXERA inspires creativity, collaboration, and future-ready engineering skills.
+                    </p>
+                    <div class="flex gap-8 reveal-child justify-center md:justify-start">
+                        <div>
+                            <h4 class="text-3xl font-bold text-white mb-1 orbitron">15+</h4>
+                            <p class="text-xs text-blue-400 uppercase tracking-wider tech-font">Events</p>
+                        </div>
+                        <div>
+                            <h4 class="text-3xl font-bold text-white mb-1 orbitron">100k+</h4>
+                            <p class="text-xs text-purple-400 uppercase tracking-wider tech-font">Prize pool</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="container mx-auto px-6 py-12 min-h-screen">
+            <div class="text-center mb-12 reveal-container">
+                <h2 class="text-3xl md:text-5xl font-bold text-white orbitron mb-2 reveal-child">EVENTS</h2>                
+                <div class="flex:none justify-center gap-3 mt-8 flex-wrap reveal-child">
+                    <button class="interactable filter-btn active px-6 py-2 rounded-full font-semibold text-sm tracking-wide" data-filter="all">ALL</button>
+                    <button class="interactable filter-btn px-6 py-2 rounded-full font-semibold text-sm tracking-wide" data-filter="tech">TECHNICAL</button>
+                    <button class="interactable filter-btn px-6 py-2 rounded-full font-semibold text-sm tracking-wide" data-filter="non-tech">NON-TECHNICAL</button>
+                    <button class="interactable filter-btn px-6 py-2 rounded-full font-semibold text-sm tracking-wide" data-filter="workshop">WORKSHOPS</button>
+                    <button class="interactable filter-btn px-6 py-2 rounded-full font-semibold text-sm tracking-wide" data-filter="flagship">FLAGSHIP</button>
+                    <button class="interactable filter-btn px-6 py-2 rounded-full font-semibold text-sm tracking-wide" data-filter="combo">COMBOS</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8 reveal-container" id="events-grid">                
+                
+                <!-- <div class="reveal-child interactable event-card tilt-card card-workshop group cursor-pointer" data-category="workshop">
+                     <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                             <span class="text-[10px] font-bold tracking-widest text-emerald-400 bg-emerald-900/30 px-2 py-0.5 rounded w-max">TRAINING</span>
+                             <i class="fas fa-wifi text-emerald-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">IoT Grid</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Interface with the ESP32 node. Establish global connectivity.</p>
+                        <div class="mt-auto border-t border-emerald-500/30 pt-4 flex justify-between items-center group-hover:text-emerald-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+                 -->
+
+                <div class="reveal-child interactable event-card tilt-card card-combo group cursor-pointer" data-category="combo">
+                    <div class="p-6 flex flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-indigo-400 bg-indigo-900/30 px-2 py-0.5 rounded w-max">ELITE BUNDLE</span>
+                            <i class="fas fa-layer-group text-indigo-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Coding Combo</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Ultimate software challenge. Coding Marathon + Hackathon access at a special rate.</p>
+                        <div class="mt-auto border-t border-indigo-500/30 pt-4 flex justify-between items-center group-hover:text-indigo-300 transition-colors">
+                            <span class="text-xs font-mono">View Package</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-combo group cursor-pointer" data-category="combo">
+                    <div class="p-6 flex flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-indigo-400 bg-indigo-900/30 px-2 py-0.5 rounded w-max">ELITE BUNDLE</span>
+                            <i class="fas fa-microchip text-indigo-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Circuit Combo</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Hardware mastery package. Circuit Wars + Lab Lockdown entry included.</p>
+                        <div class="mt-auto border-t border-indigo-500/30 pt-4 flex justify-between items-center group-hover:text-indigo-300 transition-colors">
+                            <span class="text-xs font-mono">View Package</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-flagship group cursor-pointer" data-category="flagship">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-yellow-400 bg-yellow-900/30 px-2 py-0.5 rounded w-max">CODEFEST</span>
+                            <i class="fas fa-laptop-code text-yellow-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Hackathon</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">24-hour grueling test of endurance. Build to survive.</p>
+                        <div class="mt-auto border-t border-yellow-500/30 pt-4 flex justify-between items-center group-hover:text-yellow-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-tech group cursor-pointer" data-category="tech">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-cyan-400 bg-cyan-900/30 px-2 py-0.5 rounded w-max">HARDWARE</span>
+                            <i class="fas fa-bolt text-cyan-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Circuit Wars</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Battle of the breadboards. Debug complex circuits.</p>
+                        <div class="mt-auto border-t border-cyan-500/30 pt-4 flex justify-between items-center group-hover:text-cyan-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-non-tech group cursor-pointer" data-category="non-tech">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-pink-400 bg-pink-900/30 px-2 py-0.5 rounded w-max">MYSTERY</span>
+                            <i class="fas fa-search text-pink-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Treasure Hunt</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Solve the murder case scenario and find the treasure.</p>
+                        <div class="mt-auto border-t border-pink-500/30 pt-4 flex justify-between items-center group-hover:text-pink-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-flagship group cursor-pointer" data-category="flagship">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-yellow-400 bg-yellow-900/30 px-2 py-0.5 rounded w-max">ROBOTICS</span>
+                            <i class="fas fa-robot text-yellow-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Cyber Kick</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Automated units engage in tactical sport.</p>
+                        <div class="mt-auto border-t border-yellow-500/30 pt-4 flex justify-between items-center group-hover:text-yellow-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-tech group cursor-pointer" data-category="tech">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-cyan-400 bg-cyan-900/30 px-2 py-0.5 rounded w-max">AI/ML</span>
+                            <i class="fas fa-brain text-cyan-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Prompt Verse</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Master the art of AI communication.</p>
+                        <div class="mt-auto border-t border-cyan-500/30 pt-4 flex justify-between items-center group-hover:text-cyan-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-non-tech group cursor-pointer" data-category="non-tech">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-pink-400 bg-pink-900/30 px-2 py-0.5 rounded w-max">GAMING</span>
+                            <i class="fas fa-bullseye text-pink-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Carrom</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Strike and pocket. Showcase your finger dexterity.</p>
+                        <div class="mt-auto border-t border-pink-500/30 pt-4 flex justify-between items-center group-hover:text-pink-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-flagship group cursor-pointer" data-category="flagship">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-yellow-400 bg-yellow-900/30 px-2 py-0.5 rounded w-max">ROBOTICS</span>
+                            <i class="fas fa-hand-rock text-yellow-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Lift-N-Shift</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Precision control required. Maneuver to pick objects.</p>
+                        <div class="mt-auto border-t border-yellow-500/30 pt-4 flex justify-between items-center group-hover:text-yellow-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-child interactable event-card tilt-card card-non-tech group cursor-pointer" data-category="non-tech">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-pink-400 bg-pink-900/30 px-2 py-0.5 rounded w-max">STRATEGY</span>
+                            <i class="fas fa-chess-knight text-pink-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Chess</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Checkmate your opponent in this battle of wits.</p>
+                        <div class="mt-auto border-t border-pink-500/30 pt-4 flex justify-between items-center group-hover:text-pink-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-tech group cursor-pointer" data-category="tech">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-cyan-400 bg-cyan-900/30 px-2 py-0.5 rounded w-max">CIRCUITS</span>
+                            <i class="fas fa-microchip text-cyan-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Lab Lockdown</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Escape the laboratory by solving technical puzzles.</p>
+                        <div class="mt-auto border-t border-cyan-500/30 pt-4 flex justify-between items-center group-hover:text-cyan-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-non-tech group cursor-pointer" data-category="non-tech">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-pink-400 bg-pink-900/30 px-2 py-0.5 rounded w-max">TRIVIA</span>
+                            <i class="fas fa-question text-pink-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Quizify</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Rapid-fire quiz covering social science and current affairs.</p>
+                        <div class="mt-auto border-t border-pink-500/30 pt-4 flex justify-between items-center group-hover:text-pink-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-tech group cursor-pointer" data-category="tech">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-cyan-400 bg-cyan-900/30 px-2 py-0.5 rounded w-max">SOFTWARE</span>
+                            <i class="fas fa-code text-cyan-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Coding Marathon</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Solve algorithmic challenges continuously.</p>
+                        <div class="mt-auto border-t border-cyan-500/30 pt-4 flex justify-between items-center group-hover:text-cyan-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-non-tech group cursor-pointer" data-category="non-tech">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-pink-400 bg-pink-900/30 px-2 py-0.5 rounded w-max">MANAGEMENT</span>
+                            <i class="fas fa-gavel text-pink-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">IPL Auction</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Build your dream team. Strategize your budget.</p>
+                        <div class="mt-auto border-t border-pink-500/30 pt-4 flex justify-between items-center group-hover:text-pink-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-flagship group cursor-pointer" data-category="flagship">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-yellow-400 bg-yellow-900/30 px-2 py-0.5 rounded w-max">FLAGSHIP</span>
+                            <i class="fas fa-file-alt text-yellow-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Paper Presentation</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Present your innovative ideas for the problem statement.</p>
+                        <div class="mt-auto border-t border-yellow-500/30 pt-4 flex justify-between items-center group-hover:text-yellow-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-non-tech group cursor-pointer" data-category="non-tech">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-pink-400 bg-pink-900/30 px-2 py-0.5 rounded w-max">ESPORTS</span>
+                            <i class="fas fa-gamepad text-pink-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Free Fire</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Battle Royale. Survival of the fittest.</p>
+                        <div class="mt-auto border-t border-pink-500/30 pt-4 flex justify-between items-center group-hover:text-pink-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-flagship group cursor-pointer" data-category="flagship">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-yellow-400 bg-yellow-900/30 px-2 py-0.5 rounded w-max">ROBOTICS</span>
+                            <i class="fas fa-microchip text-yellow-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">Maze Drift</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Follow the line by your RC to win. </p>
+                        <div class="mt-auto border-t border-yellow-500/30 pt-4 flex justify-between items-center group-hover:text-yellow-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-child interactable event-card tilt-card card-non-tech group cursor-pointer" data-category="non-tech">
+                    <div class="p-6 flex:none flex-col h-full card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-pink-400 bg-pink-900/30 px-2 py-0.5 rounded w-max">ESPORTS</span>
+                            <i class="fas fa-futbol text-pink-500/80 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-orbitron drop-shadow-md">E-Football</h3>
+                        <p class="text-gray-300 text-sm mb-6 flex-grow leading-relaxed font-medium">Virtual pitch glory. 1v1 football simulation.</p>
+                        <div class="mt-auto border-t border-pink-500/30 pt-4 flex justify-between items-center group-hover:text-pink-300 transition-colors">
+                            <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+<section id="timeline" class="container mx-auto px-6 py-24 relative z-20">
+    <div class="text-center mb-16 reveal-container">
+        <h2 class="text-3xl md:text-5xl font-bold text-white orbitron mb-4 reveal-child">TIMELINE</h2>
+        
+        <div class="flex justify-center gap-3 mt-8 flex-wrap reveal-child" id="timeline-filters">
+    <button class="interactable timeline-filter-btn active px-6 py-2 rounded-lg border border-blue-500/30 text-xs font-bold tech-font" data-session="d1-fn">DAY 1: FORENOON</button>
+    <button class="interactable timeline-filter-btn px-6 py-2 rounded-lg border border-blue-500/30 text-xs font-bold tech-font" data-session="d1-an">DAY 1: AFTERNOON</button>
+    <button class="interactable timeline-filter-btn px-6 py-2 rounded-lg border border-blue-500/30 text-xs font-bold tech-font" data-session="d2">DAY 2: FULL DAY</button>
+</div>
+    </div>
+
+    <div class="relative max-w-4xl mx-auto pl-8 md:pl-0" id="timeline-container">
+        <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-px bg-blue-500/30"></div>
+
+        <div class="timeline-item mb-12 relative md:w-1/2 md:pr-12 md:text-right" data-session="d1-fn">
+            <div class="time-pointer hidden md:block absolute top-2 -right-2 w-4 h-4 rounded-full bg-blue-500 shadow-[0_0_15px_#3b82f6]"></div>
+            <div class="glass-panel p-5 rounded-xl border-t-2 border-blue-500">
+                <span class="text-blue-400 font-mono text-sm font-bold tracking-tighter">09:00 AM — 10:00 AM</span>
+                <h4 class="text-xl font-bold text-white orbitron mt-1">Inaugration</h4>
+                <p class="text-gray-400 text-xs mt-2 uppercase">Main Auditorium</p>
+            </div>
+        </div>
+
+        <div class="timeline-item mb-12 relative md:w-1/2 md:ml-auto md:pl-12" data-session="d1-fn">
+            <div class="time-pointer hidden md:block absolute top-2 -left-2 w-4 h-4 rounded-full bg-blue-500"></div>
+            <div class="glass-panel p-5 rounded-xl border-t-2 border-blue-500">
+                <span class="text-blue-400 font-mono text-sm font-bold tracking-tighter">10:00 AM — 01:00 PM</span>
+                <h4 class="text-xl font-bold text-white orbitron mt-1">Robosoccer </h4>
+                <p class="text-gray-400 text-xs mt-2 uppercase">Robotics Arena</p>
+            </div>
+        </div>
+
+        <div class="timeline-item mb-12 relative md:w-1/2 md:pr-12 md:text-right" data-session="d1-fn">
+            <div class="time-pointer hidden md:block absolute top-2 -right-2 w-4 h-4 rounded-full bg-blue-500"></div>
+            <div class="glass-panel p-5 rounded-xl border-t-2 border-blue-500">
+                <span class="text-blue-400 font-mono text-sm font-bold tracking-tighter">10:00 AM — 01:00 PM</span>
+                <h4 class="text-xl font-bold text-white orbitron mt-1"> Pick N Place</h4>
+                <p class="text-gray-400 text-xs mt-2 uppercase">Robotics Arena</p>
+            </div>
+        </div>
+
+        <div class="timeline-item mb-12 relative md:w-1/2 md:ml-auto md:pl-12" data-session="d1-fn">
+            <div class="time-pointer hidden md:block absolute top-2 -left-2 w-4 h-4 rounded-full bg-blue-500"></div>
+            <div class="glass-panel p-5 rounded-xl border-t-2 border-blue-500">
+                <span class="text-blue-400 font-mono text-sm font-bold tracking-tighter">10:00 AM — 01:00 PM</span>
+                <h4 class="text-xl font-bold text-white orbitron mt-1">Coding </h4>
+                <p class="text-gray-400 text-xs mt-2 uppercase">Robotics Arena</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item mb-12 relative md:w-1/2 md:pr-12 md:text-right" data-session="d1-fn">
+            <div class="time-pointer hidden md:block absolute top-2 -right-2 w-4 h-4 rounded-full bg-blue-500"></div>
+            <div class="glass-panel p-5 rounded-xl border-t-2 border-blue-500">
+                <span class="text-blue-400 font-mono text-sm font-bold tracking-tighter">10:30 AM — 12:30 PM</span>
+                <h4 class="text-xl font-bold text-white orbitron mt-1">Prompt Verse</h4>
+                <p class="text-gray-400 text-xs mt-2 uppercase">Computing Lab 1</p>
+            </div>
+        </div>
+
+        <div class="timeline-item mb-12 relative md:w-1/2 md:ml-auto md:pl-12" data-session="d1-fn">
+            <div class="time-pointer hidden md:block absolute top-2 -left-2 w-4 h-4 rounded-full bg-blue-500"></div>
+            <div class="glass-panel p-5 rounded-xl border-t-2 border-blue-500">
+                <span class="text-blue-400 font-mono text-sm font-bold tracking-tighter">11:00 AM — 01:00 PM</span>
+                <h4 class="text-xl font-bold text-white orbitron mt-1">Circuit War</h4>
+                <p class="text-gray-400 text-xs mt-2 uppercase">Electronics Hall</p>
+            </div>
+        </div>
+
+        <div class="timeline-item mb-12 relative md:w-1/2 md:pr-12 md:text-right" data-session="d1-an">
+            <div class="time-pointer hidden md:block absolute top-2 -right-2 w-4 h-4 rounded-full bg-purple-500 shadow-[0_0_15px_#a855f7]"></div>
+            <div class="glass-panel p-5 rounded-xl border-t-2 border-purple-500">
+                <span class="text-purple-400 font-mono text-sm font-bold tracking-tighter">02:00 PM — 04:30 PM</span>
+                <h4 class="text-xl font-bold text-white orbitron mt-1">Chess</h4>
+                <p class="text-gray-400 text-xs mt-2 uppercase">Recreation Zone</p>
+            </div>
+        </div>
+
+        <div class="timeline-item mb-12 relative md:w-1/2 md:ml-auto md:pl-12" data-session="d1-an">
+            <div class="time-pointer hidden md:block absolute top-2 -left-2 w-4 h-4 rounded-full bg-purple-500"></div>
+            <div class="glass-panel p-5 rounded-xl border-t-2 border-purple-500">
+                <span class="text-purple-400 font-mono text-sm font-bold tracking-tighter">02:30 PM — 04:00 PM</span>
+                <h4 class="text-xl font-bold text-white orbitron mt-1">General Quiz</h4>
+                <p class="text-gray-400 text-xs mt-2 uppercase">Seminar Hall</p>
+            </div>
+        </div>
+
+        <div class="timeline-item mb-12 relative md:w-1/2 md:pr-12 md:text-right" data-session="d1-an">
+            <div class="time-pointer hidden md:block absolute top-2 -right-2 w-4 h-4 rounded-full bg-purple-500"></div>
+            <div class="glass-panel p-5 rounded-xl border-t-2 border-purple-500">
+                <span class="text-purple-400 font-mono text-sm font-bold tracking-tighter">02:00 PM — 04:30 PM</span>
+                <h4 class="text-xl font-bold text-white orbitron mt-1"> Carrom</h4>
+                <p class="text-gray-400 text-xs mt-2 uppercase">Recreation Zone</p>
+            </div>
+        </div>
+
+        <div class="timeline-item mb-12 relative md:w-1/2 md:ml-auto md:pl-12" data-session="d1-an">
+            <div class="time-pointer hidden md:block absolute top-2 -left-2 w-4 h-4 rounded-full bg-purple-500"></div>
+            <div class="glass-panel p-5 rounded-xl border-t-2 border-purple-500">
+                <span class="text-purple-400 font-mono text-sm font-bold tracking-tighter">02:30 PM — 04:00 PM</span>
+                <h4 class="text-xl font-bold text-white orbitron mt-1">Treasure Hunt </h4>
+                <p class="text-gray-400 text-xs mt-2 uppercase">Seminar Hall</p>
+            </div>
+        </div>
+
+        <div class="timeline-item mb-12 relative md:w-1/2 md:pr-12 md:text-right" data-session="d1-an">
+            <div class="time-pointer hidden md:block absolute top-2 -right-2 w-4 h-4 rounded-full bg-purple-500"></div>
+            <div class="glass-panel p-5 rounded-xl border-t-2 border-purple-500">
+                <span class="text-purple-400 font-mono text-sm font-bold tracking-tighter">02:30 PM — 05:00 PM</span>
+                <h4 class="text-xl font-bold text-white orbitron mt-1">Lab Lockdown</h4>
+                <p class="text-gray-400 text-xs mt-2 uppercase">Campus-wide</p>
+            </div>
+        </div>
+
+        <div class="timeline-item mb-12 relative md:w-1/2 md:ml-auto md:pl-12" data-session="d2">
+            <div class="time-pointer hidden md:block absolute top-2 -left-2 w-4 h-4 rounded-full bg-cyan-500 shadow-[0_0_15px_#06b6d4]"></div>
+            <div class="glass-panel p-5 rounded-xl border-t-2 border-cyan-500">
+                <span class="text-cyan-400 font-mono text-sm font-bold tracking-tighter">09:00 AM — 05:00 PM</span>
+                <h4 class="text-xl font-bold text-white orbitron mt-1">Hackathon</h4>
+                <p class="text-gray-400 text-xs mt-2 uppercase">Innovation Hub</p>
+            </div>
+        </div>
+
+        <div class="timeline-item mb-12 relative md:w-1/2 md:pr-12 md:text-right" data-session="d2">
+            <div class="time-pointer hidden md:block absolute top-2 -right-2 w-4 h-4 rounded-full bg-cyan-500"></div>
+            <div class="glass-panel p-5 rounded-xl border-t-2 border-cyan-500">
+                <span class="text-cyan-400 font-mono text-sm font-bold tracking-tighter">10:00 AM — 01:00 PM</span>
+                <h4 class="text-xl font-bold text-white orbitron mt-1">Line Rush</h4>
+                <p class="text-gray-400 text-xs mt-2 uppercase">RC Track Area</p>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- SPONSORS SECTION -->
+        <section id="sponsors" class="py-24 relative z-20 overflow">
+            <h3 class="text-3xl md:text-5xl font-black text-white orbitron text-center uppercase">
+                    OUR SPONSORS
+                </h3>
+
+            <div class="sponsor-slider-container">
+                <div class="sponsor-track">
+                    <div class="sponsor-logo"><img src="sponsor1.png" alt="Sponsor 1"></div>
+                    <div class="sponsor-logo"><img src="sponsor2.png" alt="Sponsor 2"></div>
+                    <div class="sponsor-logo"><img src="sponsor3.png" alt="Sponsor 3"></div>
+                    <div class="sponsor-logo"><img src="sponsor4.png" alt="Sponsor 4"></div>
+                    <div class="sponsor-logo"><img src="sponsor5.png" alt="Sponsor 5"></div>
+                    <div class="sponsor-logo"><img src="sponsor6.png" alt="Sponsor 6"></div>
+                    
+                    <div class="sponsor-logo"><img src="sponsor1.png" alt="Sponsor 1"></div>
+                    <div class="sponsor-logo"><img src="sponsor2.png" alt="Sponsor 2"></div>
+                    <div class="sponsor-logo"><img src="sponsor3.png" alt="Sponsor 3"></div>
+                    <div class="sponsor-logo"><img src="sponsor4.png" alt="Sponsor 4"></div>
+                    <div class="sponsor-logo"><img src="sponsor5.png" alt="Sponsor 5"></div>
+                    <div class="sponsor-logo"><img src="sponsor6.png" alt="Sponsor 6"></div>
+                </div>
+            </div>
+        </section>
+
+     <footer id="contact" class="pt-16 pb-10 relative z-20 glass-panel border-t border-blue-500/20 reveal-container">
+    <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto grid grid-cols-2 gap-8 sm:gap-20 items-start">
+            
+            <div class="reveal-child flex flex-col space-y-10">
+                <div class="text-left">
+                    <h4 class="text-blue-400 font-bold mb-3 uppercase tracking-widest text-[10px] tech-font">Initialize Navigation <i class="fas fa-location-arrow ml-1"></i> </h4>
+                    <a href="https://www.google.com/maps/place/Coimbatore+Institute+of+Technology/@11.028326,77.027281,412m/data=!3m1!1e3!4m6!3m5!1s0x3ba858979f85136b:0xdd9ca28d3c37cf8a!8m2!3d11.0283259!4d77.0272806!16zL20vMDNkeXFz?coh=245187&entry=tts&g_ep=EgoyMDI1MDUxMS4wIPu8ASoJLDEwMjExNDUzSAFQAw%3D%3D&skid=6e991028-1e99-4c86-95e6-33a09607c486" target="_blank" class="group/loc block">
+                        <p class="text-gray-300 text-[11px] sm:text-sm leading-relaxed transition-colors group-hover/loc:text-white">
+                            Coimbatore Institute of Technology,<br>
+                            Avinashi Road, Civil Aerodrome Post,<br>
+                            Coimbatore, Tamil Nadu 641014.
+                        </p>
+                        <span class="text-[8px] text-blue-500/50 uppercase tracking-widest mt-1 block group-hover/loc:text-blue-400">
+                             
+                        </span>
+                    </a>
+                </div>
+
+                <div class="text-left">
+                    <h4 class="text-blue-400 font-bold mb-4 uppercase tracking-widest text-[10px] tech-font">Social Uplinks</h4>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://www.instagram.com/nexera26?igsh=MXhqanVjMDEyMmJ2dg==" target="_blank" class="group flex flex-col items-center gap-1">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 border border-white/10 rounded-full group-hover:bg-pink-600/20 group-hover:border-pink-500/50 transition-all flex items-center justify-center text-gray-400 group-hover:text-white">
+                                <i class="fab fa-instagram text-base"></i>
+                            </div>
+                            <span class="text-[7px] uppercase tracking-widest text-gray-500">Instagram</span>
+                        </a>
+                        <a href="#" target="_blank" class="group flex flex-col items-center gap-1">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 border border-white/10 rounded-full group-hover:bg-blue-600/20 group-hover:border-blue-500/50 transition-all flex items-center justify-center text-gray-400 group-hover:text-white">
+                                <i class="fab fa-linkedin-in text-base"></i>
+                            </div>
+                            <span class="text-[7px] uppercase tracking-widest text-gray-500">LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal-child flex flex-col items-start text-left">
+                <h4 class="text-blue-400 font-bold mb-6 uppercase tracking-widest text-[10px] tech-font">Contact Personnel</h4>
+                <div class="space-y-5">
+                    <div class="group">
+                        <p class="text-white text-xs sm:text-base font-semibold">Arjun Kumar</p>
+                        <p class="text-blue-400 text-[10px] sm:text-sm font-mono">+91 98765 43210</p>
+                    </div>
+                    <div class="group">
+                        <p class="text-white text-xs sm:text-base font-semibold">Deepika Raj</p>
+                        <p class="text-blue-400 text-[10px] sm:text-sm font-mono">+91 94432 12345</p>
+                    </div>
+                    <div class="group">
+                        <p class="text-white text-xs sm:text-base font-semibold">Sanjay Viswan</p>
+                        <p class="text-blue-400 text-[10px] sm:text-sm font-mono">+91 90012 34567</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-16 pt-6 border-t border-white/5">
+            <div class="text-gray-600 text-[9px] uppercase tracking-[0.3em] mb-1 tech-font">
+                NEXERA // ECE SYMPOSIUM 2024
+            </div>
+            <div class="text-gray-800 text-[7px] uppercase tracking-[0.4em]">
+                Coimbatore Institute of Technology
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    </main>
+
+    <!-- Event Modal -->
+ <div id="event-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-xl">
+    
+    <div class="modal-bg-mesh-tech modal-bg-mesh hidden"></div>
+    <div class="modal-stars-bg modal-bg-stars hidden"></div>
+    <div class="modal-bg-flagship hidden"></div>
+    <div class="modal-blob-tech-1 modal-blob-tech hidden"></div>
+    <div class="modal-blob-tech-2 modal-blob-tech hidden"></div>
+    <div class="modal-blob-tech-3 modal-blob-tech hidden"></div>
+    <div class="modal-blob-nebula-1 modal-blob-nebula hidden"></div>
+    <div class="modal-blob-nebula-2 modal-blob-nebula hidden"></div>
+    <div class="modal-blob-nebula-3 modal-blob-nebula hidden"></div>
+    <div class="modal-blob-flagship-1 modal-blob-flagship hidden"></div>
+    <div class="modal-blob-flagship-2 modal-blob-flagship hidden"></div>
+    <div class="modal-blob-flagship-3 modal-blob-flagship hidden"></div>
+    <button id="close-modal" class="fixed top-6 right-14 text-white text-5xl hover:text-red-500 transition-all z-[60] interactable drop-shadow-lg">
+        &times;
+    </button>
+    <div id="modal-content-wrapper" class="relative h-full overflow-y-auto custom-scrollbar animate-scale-up">
+        <div class="max-w-[1400px] mx-auto px-5 py-10 lg:py-16 relative z-10">
+           
+            <div class="flex flex-col lg:flex-row gap-8 items-start">
+                
+                <aside class="w-full lg:w-[35%] lg:sticky lg:top-0">
+                    <div id="modal-image" class="w-full h-[300px] md:h-[450px] rounded-3xl bg-cover bg-center shadow-2xl border border-white/10 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <span id="modal-badge" class="bg-blue-600 text-xs font-bold px-2 py-1 rounded uppercase"></span>
+                            <h2 id="modal-subtitle" class="text-2xl font-bold mt-2"></h2>
+                        </div>
+                    </div>
+                </aside>
+
+                <main class="w-full flex-1 glass-panel p-6 md:p-10 rounded-[40px] relative border border-white/5 bg-transparent">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-cyan-500 to-sky-400"></div>
+                    
+                    <h1 id="modal-title" class="text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-tight mb-4 orbitron"></h1>
+                    
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
+                        <span class="text-sm font-semibold text-gray-300">Live Event</span>
+                    </div>
+
+                    <h2 class="font-bold text-3xl md:text-4xl text-white mb-4 leading-tight">About The Event</h2>
+                    <p id="modal-description" class="text-lg text-gray-100/80 leading-relaxed mb-8"></p>
+
+                    <div class="mb-6">
+                        <button id="rules-toggle-btn" class="w-full py-4 px-6 bg-white/5 border border-white/10 rounded-xl flex justify-between items-center group hover:bg-white/10 transition-all">
+                            <span class="text-xl font-bold text-white uppercase tracking-widest">Event Rules</span>
+                            <i class="fas fa-chevron-down text-gray-400 group-hover:text-white transition-transform duration-300" id="rules-icon"></i>
+                        </button>
+                        <div id="rules-content" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-black/40 rounded-b-xl">
+                            <ul id="modal-rules" class="p-6 text-gray-300 space-y-3 text-sm list-disc list-inside"></ul>
+                        </div>
+                    </div>
+                    <div id="rulebook-container" class="mb-6 hidden">
+    <a id="modal-rulebook-link" href="#" download class="w-full py-4 px-6 bg-white/5 border border-white/20 rounded-xl flex justify-between items-center group hover:bg-blue-600/20 hover:border-blue-500/50 transition-all duration-300">
+        <span class="flex items-center gap-3">
+            <i class="fas fa-file-pdf text-red-400 text-xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-sm font-bold text-white uppercase tracking-widest">Download Official Rulebook</span>
+        </span>
+        <i class="fas fa-download text-gray-400 group-hover:text-white group-hover:translate-y-1 transition-all"></i>
+    </a>
+</div>
+                    <div class="flex flex-wrap gap-4 mb-10">
+                        <div class="flex-1 min-w-[140px] bg-white/5 border border-white/10 p-4 rounded-2xl flex items-center gap-4">
+                            <div class="text-yellow-400 text-2xl"><i class="fas fa-trophy"></i></div>
+                            <div>
+                                <p cla ss="text-[10px] uppercase tracking-widest text-gray-500">Prize Pool</p>
+                                <p id="modal-prize-pool" class="text-white font-bold text-lg"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex-1 min-w-[140px] bg-white/5 border border-white/10 p-4 rounded-2xl flex items-center gap-4">
+                            <div class="text-blue-400 text-2xl"><i class="fas fa-users"></i></div>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-widest text-gray-500">Team Size</p>
+                                <p id="modal-team-size" class="text-white font-bold text-lg"></p>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 min-w-[140px] bg-white/5 border border-white/10 p-4 rounded-2xl flex items-center gap-4">
+                            <div class="text-emerald-400 text-2xl"><i class="fas fa-ticket-alt"></i></div>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-widest text-gray-500">Entry Fee</p>
+                                <p id="modal-entry-fee" class="text-white font-bold text-lg"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-8 pt-6 border-t border-white/10">
+                        <h3 class="text-xl font-bold text-white tracking-widest mb-4">Contact for Queries</h3>
+                        <div id="modal-coordinators" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            </div>
+                    </div>
+                    <button class="cosmic-btn w-full py-5 rounded-2xl text-white font-black text-xl tracking-widest uppercase flex items-center justify-center gap-4 group transition-all hover:scale-[1.02]">
+                        Register Now <i class="fas fa-bolt group-hover:scale-125 transition-transform"></i>
+                    </button>
+                </main>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="combo-verify-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/80 backdrop-blur-md px-4">
+    <div class="glass-panel p-8 rounded-[32px] max-w-md w-full border border-blue-500/30 text-center animate-scale-up relative">
+        <div class="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-6 border border-blue-500/50">
+            <i class="fas fa-layer-group text-blue-400 text-2xl"></i>
+        </div>
+        
+        <h3 class="orbitron text-2xl font-bold text-white mb-4">OPTIMIZE YOUR UPLINK</h3>
+        <p class="text-gray-300 mb-8 leading-relaxed">
+            Our sensors indicate you are registering for a standalone module. Elite developers often utilize <span class="text-blue-400 font-bold">Bundle Protocols</span> to unlock multiple events at reduced energy costs. Have you reviewed our available Combos?
+        </p>
+        
+        <div class="flex flex-col gap-3">
+            <button id="go-to-combo-btn" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all uppercase tracking-wider text-sm">
+                Go to the combos section
+            </button>
+            <button id="proceed-reg-link" class="w-full py-3 border border-white/20 hover:bg-white/10 text-gray-300 hover:text-white rounded-xl font-bold transition-all text-sm">
+                Acknowledge & Proceed to Registration
+            </button>
+            <button id="close-verify-btn" class="w-full py-2 text-gray-500 hover:text-red-400 transition-colors text-xs uppercase tracking-widest mt-2">
+                Abort Command
+            </button>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -949,18 +949,16 @@ a[href*="maps"] {
 @media (min-width: 1024px) {
     /* Increases height on desktop for posters */
     #modal-image {
-        height: 650px !important; 
+        height: 675px !important; 
     }
 }
-
-/* Ensures the poster doesn't get cut off on mobile */
 @media (max-width: 768px) {
     #modal-image {
    
-    /* Increase height for mobile to give vertical posters more space */
-    height: 100px !important;
+    height: 550px !important;
 }
 }
+
 
 #home {
     min-height: 100vh;
@@ -994,5 +992,6 @@ a[href*="maps"] {
         padding: 0.75rem !important;
     }
 }
+
 
 

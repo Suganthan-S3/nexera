@@ -955,7 +955,7 @@ a[href*="maps"] {
 @media (max-width: 768px) {
     #modal-image {
    
-    height: 1000px !important;
+    height: 825px !important;
 }
 }
 
@@ -992,6 +992,7 @@ a[href*="maps"] {
         padding: 0.75rem !important;
     }
 }
+
 
 
 

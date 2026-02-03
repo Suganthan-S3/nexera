@@ -946,6 +946,7 @@ a[href*="maps"] {
         width: 100%;
     }
 }
+
 #modal-image {
     width: 100%;
     /* Standard height for desktop */
@@ -973,7 +974,6 @@ a[href*="maps"] {
         margin-bottom: 1rem;
     }
 }
-
 
 #home {
     min-height: 100vh;
@@ -1007,11 +1007,4 @@ a[href*="maps"] {
         padding: 0.75rem !important;
     }
 }
-
-
-
-
-
-
-
 

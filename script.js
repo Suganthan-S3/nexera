@@ -189,7 +189,7 @@ filterBtns.forEach(btn => {
             title: 'Cyber Kick',
             // subtitle: 'ROBOVERSE SERIES',
             // badge: 'ROBOTICS',
-            prizePool: '₹9K+',
+            prizePool: '₹10K',
             entryFee: '₹500 / Team', 
             regLink: 'https://forms.gle/WWNiNaqffcK8xzoS6',
             rulebook: 'cyber_kick.docx',
@@ -203,7 +203,7 @@ filterBtns.forEach(btn => {
                 'A maximum of 3 restarts are permitted per match, with the timer remaining active throughout.',
                 'Note: Refer to "cyber_kick.docx" for full technical arena specifications.'
             ],
-            image: 'cyber.png',
+            image: 'robo.jpeg',
             coordinators: [
                 { name: 'Pooja N', phone: '+91 8220510532' },
                 { name: 'Gautham Raj H', phone: '+91 8668021608' }
@@ -213,7 +213,7 @@ filterBtns.forEach(btn => {
             title: 'Maze Drift',
             // subtitle: 'ROBOVERSE SERIES',
             // badge: 'ROBOTICS',
-            prizePool: '₹9K+',
+            prizePool: '₹10K',
             entryFee: '₹500 / Team',
             teamSize: 'Up to 5 Members',
             regLink: 'https://forms.gle/VsK9cbYpfSDF9qZf9',
@@ -227,7 +227,7 @@ filterBtns.forEach(btn => {
                 'Points are awarded for checkpoint crossing, successful dry runs, and shortest path optimization.',
                 'Note: Refer to "MAZEDRIFT.pdf" for arena dimensions and logic rules.'
             ],
-            image: 'maze.png',
+            image: 'maze.jpeg',
             coordinators: [
                 { name: 'GOBIKA NS', phone: '+91 9345531715' },
                 { name: 'BHUVAN RAJ M', phone: '+91 9677564359' }
@@ -237,7 +237,7 @@ filterBtns.forEach(btn => {
             title: 'Lift-N-Shift',
             // subtitle: 'ROBOVERSE SERIES',
             // badge: 'ROBOTICS',
-            prizePool: '₹9K+',
+            prizePool: '₹10K',
             entryFee: '₹500 / Team',
             teamSize: '1-4 Members',
             regLink: 'https://forms.gle/rCNZyKSWk5rh7nZx9',
@@ -251,7 +251,7 @@ filterBtns.forEach(btn => {
                 'Human intervention is strictly limited to repositioning the bot at designated checkpoints.',
                 'Note: Refer to "pick n place.docx" for detailed scoring and penalty criteria.'
             ],
-            image: 'lift.png',
+            image: 'lift.jpeg',
             coordinators: [
                 { name: 'Shageetha Johnson A', phone: '+91 9360002955' },
                 { name: 'Raghubathi Raja T K', phone: '+91 9363170477' }
@@ -560,15 +560,40 @@ filterBtns.forEach(btn => {
                 { name: 'Bhuvan Rohith R', phone: '+91 8778717442' }
             ]
         },
-        'IoT Grid': {
-            title: 'IoT Grid',
-            // subtitle: 'Connected World',
-            // badge: 'TRAINING',
-            prizePool: 'Certification',
+        'Cyber Security': {
+            title: 'Cyber Security',
+            // prizePool: 'Certification + Merit',
+            entryFee: '₹200 / Participant',
             teamSize: 'Individual',
-            description: 'Interface with the ESP32 node. Establish global connectivity in IoT workshop.',
-            rules: ['Hands-on workshop', 'Basic electronics', 'Programming involved'],
-            image: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=2069&auto=format&fit=crop'
+            regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeUGoy5WKSOliXfghg8RCdqDxU18chcVv-3GlATkx8_K8RcNA/viewform?usp=sharing&ouid=110963580985970388920', 
+            description: 'Participants will gain practical exposure to cybersecurity concepts, tools, and real-world attack scenarios. The session focuses on ethical hacking basics, system security, and threat awareness. Participants are required to bring their laptops for hands-on activities. Certificates will be awarded to all participants upon completion.',
+            // rules: [
+            //     'Session Flow: Moves from Information Gathering to Network Security and Web Penetration Testing.',
+            //     'Hardware: Participants must bring their own laptops with at least 8GB RAM and full power backup.',
+            //     'Certification: Official certificates will be awarded to all participants upon completion.'
+            // ],
+            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
+            coordinators: [
+                { name: 'Kabilan M', phone: '+91 7904088404' }
+            ]
+        },
+        'AI Agent': {
+            title: 'AI Agent',
+            // prizePool: 'Certification + Project Demo',
+            entryFee: '₹200 / Participant',
+            teamSize: 'Individual',
+            regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSc87J0vB-4ncBTUL87PucEZygIK-Wz0oYvwWUSpQP61I_KjIA/viewform', 
+            description: 'The session introduces the concept of intelligent AI agents and how they autonomously perform tasks. Basic understanding of AI or programming is helpful but not mandatory for this Workshop. Participants are required to bring their laptops for hands-on activities. Certificates will be awarded to all participants upon completion.',
+            // rules: [
+            //     'Frameworks: Hands-on experience with LangChain, CrewAI, and vector databases.',
+            //     'Hands-on: Build and showcase a custom AI assistant or a real-time research agent.',
+            //     'Requirements: Laptops with Python installed and access to LLM APIs.',
+            //     'Termination: Session concludes with a demo and certificate distribution.'
+            // ],
+            image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop',
+            coordinators: [
+                { name: 'Kabilan M', phone: '+91 7904088404' }
+            ]
         }
     };
 
@@ -612,6 +637,7 @@ window.addEventListener('popstate', () => {
     }
 });
 eventCards.forEach(card => {
+    
     card.addEventListener('click', () => {
         const eventName = card.querySelector('h3').textContent.trim();
         const category = card.getAttribute('data-category');
@@ -659,6 +685,7 @@ eventCards.forEach(card => {
             modalBadge.textContent = data.badge || "";
             modalDescription.textContent = data.description;
             
+            
             // const imagePath = data.image ? data.image : 'default_event.jpg';
             modalImage.style.backgroundImage = `url('${data.image}')`;
             // modalImage.style.backgroundRepeat = 'no-repeat';
@@ -696,69 +723,72 @@ eventCards.forEach(card => {
             }
             // --- 4. COMBO VS STANDARD RULES LOGIC ---
             // --- Inside the modal opening logic in script.js ---
-            if (isCombo && data.includedEvents) {
-                rulesToggleBtn.style.display = 'none';
-                rulesContent.style.maxHeight = '1000px'; 
-                rulesContent.style.opacity = '1';
+            // --- Updated Rules & Metadata Logic ---
 
-                const techItems = data.includedEvents.technical.map(e => `<li>${e}</li>`).join('');
-                
-                // Check if non-technical events exist before creating the HTML string
-                const nonTechItems = data.includedEvents.nonTechnical && data.includedEvents.nonTechnical.length > 0 
-                    ? data.includedEvents.nonTechnical.map(e => `<li>${e}</li>`).join('') 
-                    : "";
 
-                let comboHtml = `
-                    <div class="space-y-4 pt-4 border-t border-white/10 mt-4">
-                        <div>
-                            <h4 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
-                                <i class="fas fa-microchip"></i> Technical Modules Included
-                            </h4>
-                            <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 ml-2">${techItems}</ul>
-                        </div>`;
+if (isCombo && data.includedEvents) {
+    // 1. Handle Combo Display
+    rulesToggleBtn.style.display = 'none';
+    rulesContent.style.maxHeight = '1000px'; 
+    rulesContent.style.opacity = '1';
 
-                // ONLY add this block if nonTechItems is not an empty string
-                if (nonTechItems) {
-                    comboHtml += `
-                        <div>
-                            <h4 class="text-purple-400 font-bold text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
-                                <i class="fas fa-star"></i> Non-Technical Access
-                            </h4>
-                            <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 ml-2">${nonTechItems}</ul>
-                        </div>`;
-                }
+    const techItems = data.includedEvents.technical.map(e => `<li>${e}</li>`).join('');
+    const nonTechItems = data.includedEvents.nonTechnical && data.includedEvents.nonTechnical.length > 0 
+        ? data.includedEvents.nonTechnical.map(e => `<li>${e}</li>`).join('') 
+        : "";
 
-                comboHtml += `</div>`;
-                modalRules.innerHTML = comboHtml;
+    let comboHtml = `
+        <div class="space-y-4 pt-4 border-t border-white/10 mt-4">
+            <div>
+                <h4 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
+                    <i class="fas fa-microchip"></i> Technical Modules Included
+                </h4>
+                <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 ml-2">${techItems}</ul>
+            </div>`;
 
-                // Set metadata for combo
-                document.getElementById('modal-prize-pool').textContent = 'Event Access';
-                document.getElementById('modal-team-size').textContent = data.teamSize;
-                document.getElementById('modal-entry-fee').textContent = data.entryFee;
-            } else {
-                // Restore standard rules behavior
-                rulesToggleBtn.style.display = 'flex';
-                rulesContent.style.maxHeight = '0px';
-                // Inside the 'else' block for standard rules behavior (around line 475)
+    if (nonTechItems) {
+        comboHtml += `
+            <div>
+                <h4 class="text-purple-400 font-bold text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
+                    <i class="fas fa-star"></i> Non-Technical Access
+                </h4>
+                <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 ml-2">${nonTechItems}</ul>
+            </div>`;
+    }
+    comboHtml += `</div>`;
+    modalRules.innerHTML = comboHtml;
 
-                const deadlineContainer = document.getElementById('deadline-container');
-                const modalDeadline = document.getElementById('modal-deadline');
+    // Set Metadata for Combo
+    document.getElementById('modal-prize-pool').textContent = 'Event Access';
+    document.getElementById('modal-team-size').textContent = data.teamSize;
+    document.getElementById('modal-entry-fee').textContent = data.entryFee;
 
-                if (data.deadline) {
-                    deadlineContainer.classList.remove('hidden');
-                    modalDeadline.textContent = data.deadline;
-                } else {
-                    deadlineContainer.classList.add('hidden');
-                }
+} else {
+    // 2. Handle Standard Event Display
+    // CRITICAL FIX: Only show the button if data.rules exists and has items
+    if (data.rules && data.rules.length > 0) {
+        rulesToggleBtn.style.display = 'flex';
+        rulesContent.style.maxHeight = '0px'; 
+        modalRules.innerHTML = data.rules.map(rule => `<li>${rule}</li>`).join('');
+    } else {
+        rulesToggleBtn.style.display = 'none'; // Explicitly hide the button
+        rulesContent.style.maxHeight = '0px';
+        modalRules.innerHTML = ''; // Clear old rules
+    }
 
-                document.getElementById('modal-prize-pool').textContent = data.prizePool || 'TBA';
-                document.getElementById('modal-team-size').textContent = data.teamSize || 'TBA';
-                document.getElementById('modal-entry-fee').textContent = data.entryFee || 'Free';
-
-                if (data.rules) {
-                    modalRules.innerHTML = data.rules.map(rule => `<li>${rule}</li>`).join('');
-                }
-            }
+    // Standard Metadata
+    document.getElementById('modal-team-size').textContent = data.teamSize || 'TBA';
+    document.getElementById('modal-entry-fee').textContent = data.entryFee || 'Free';
+    
+    // Your Prize Pool Logic (already working)
+    const prizeContainer = document.getElementById('modal-prize-pool').closest('.flex-1');
+    if (data.prizePool && data.prizePool.trim() !== "") {
+        prizeContainer.style.display = 'flex';
+        document.getElementById('modal-prize-pool').textContent = data.prizePool;
+    } else {
+        prizeContainer.style.display = 'none';
+    }
+}
                         
             // Animation Wrapper
             const wrapper = document.getElementById('modal-content-wrapper');

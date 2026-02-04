@@ -451,6 +451,7 @@ filterBtns.forEach(btn => {
             regLink:'https://docs.google.com/forms/d/e/1FAIpQLSdjQDtznzVqg_2vu1F0hywcGkRIO80hgalCQXs2fY1ew_KqXQ/viewform?usp=header',
             description: 'Enter a high-stakes arena of foresight and cognitive endurance. This tournament is designed to test a player’s ability to calculate under pressure and outmaneuver rivals in a battle of pure logic. This event follows a competitive hierarchy system where every move dictates the path to victory or defeat.',
             rules: [
+                'This event will be held in Offline mode.',
                 'FIDE Standards: The latest FIDE Rules in force shall apply throughout the tournament.',
                 'Time Control: Each match is strictly timed at 20 minutes (10 minutes per player).',
                 'Registration: Both Online and On-Spot registrations are accepted.',
@@ -572,9 +573,9 @@ filterBtns.forEach(btn => {
             //     'Hardware: Participants must bring their own laptops with at least 8GB RAM and full power backup.',
             //     'Certification: Official certificates will be awarded to all participants upon completion.'
             // ],
-            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
+            image: 'ws1.png',
             coordinators: [
-                { name: 'Kabilan M', phone: '+91 7904088404' }
+                { name: 'Santhosh Kumar G', phone: '+91 9488584119' }
             ]
         },
         'AI Agent': {
@@ -590,9 +591,9 @@ filterBtns.forEach(btn => {
             //     'Requirements: Laptops with Python installed and access to LLM APIs.',
             //     'Termination: Session concludes with a demo and certificate distribution.'
             // ],
-            image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop',
+            image: 'ws2.png',
             coordinators: [
-                { name: 'Kabilan M', phone: '+91 7904088404' }
+                { name: 'Logesh Kumar R', phone: '+91 7845037439' }
             ]
         }
     };

@@ -215,7 +215,7 @@ filterBtns.forEach(btn => {
             // badge: 'ROBOTICS',
             prizePool: '₹20K',
             entryFee: '₹300 / Team',
-            teamSize: 'Up to 5 Members',
+            teamSize: 'Up to 4 Members',
             regLink: 'https://forms.gle/VsK9cbYpfSDF9qZf9',
             rulebook: 'MAZEDRIFT.pdf',
             description: 'Maze Drift is a sophisticated autonomous robotics competition requiring participants to develop bots capable of high-precision line following and maze mapping. The challenge is divided into a "Dry Run" for environmental analysis and memory storage, followed by an "Actual Run" where the bot must calculate and execute the shortest possible path to the terminal zone in minimum time.',
@@ -229,7 +229,7 @@ filterBtns.forEach(btn => {
             ],
             image: 'maze.png',
             coordinators: [
-                { name: 'GOBIKA NS', phone: '+91 9345531715' },
+                { name: 'GOBIKA N S', phone: '+91 9345531715' },
                 { name: 'BHUVAN RAJ M', phone: '+91 9677564359' }
             ]
         },

@@ -189,8 +189,8 @@ filterBtns.forEach(btn => {
             title: 'Cyber Kick',
             // subtitle: 'ROBOVERSE SERIES',
             // badge: 'ROBOTICS',
-            prizePool: '₹10K',
-            entryFee: '₹500 / Team', 
+            prizePool: '₹20K',
+            entryFee: '₹300 / Team', 
             regLink: 'https://forms.gle/WWNiNaqffcK8xzoS6',
             rulebook: 'cyber_kick.docx',
             teamSize: 'Up to 4 Members',
@@ -203,7 +203,7 @@ filterBtns.forEach(btn => {
                 'A maximum of 3 restarts are permitted per match, with the timer remaining active throughout.',
                 'Note: Refer to "cyber_kick.docx" for full technical arena specifications.'
             ],
-            image: 'robo.jpeg',
+            image: 'cyber.png',
             coordinators: [
                 { name: 'Pooja N', phone: '+91 8220510532' },
                 { name: 'Gautham Raj H', phone: '+91 8668021608' }
@@ -213,8 +213,8 @@ filterBtns.forEach(btn => {
             title: 'Maze Drift',
             // subtitle: 'ROBOVERSE SERIES',
             // badge: 'ROBOTICS',
-            prizePool: '₹10K',
-            entryFee: '₹500 / Team',
+            prizePool: '₹20K',
+            entryFee: '₹300 / Team',
             teamSize: 'Up to 5 Members',
             regLink: 'https://forms.gle/VsK9cbYpfSDF9qZf9',
             rulebook: 'MAZEDRIFT.pdf',
@@ -227,7 +227,7 @@ filterBtns.forEach(btn => {
                 'Points are awarded for checkpoint crossing, successful dry runs, and shortest path optimization.',
                 'Note: Refer to "MAZEDRIFT.pdf" for arena dimensions and logic rules.'
             ],
-            image: 'maze.jpeg',
+            image: 'maze.png',
             coordinators: [
                 { name: 'GOBIKA NS', phone: '+91 9345531715' },
                 { name: 'BHUVAN RAJ M', phone: '+91 9677564359' }

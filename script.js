@@ -203,7 +203,7 @@ filterBtns.forEach(btn => {
                 'A maximum of 3 restarts are permitted per match, with the timer remaining active throughout.',
                 'Note: Refer to "cyber_kick.docx" for full technical arena specifications.'
             ],
-            image: 'cyber.png',
+            image: 'cyber1.jpeg',
             coordinators: [
                 { name: 'Pooja N', phone: '+91 8220510532' },
                 { name: 'Gautham Raj H', phone: '+91 8668021608' }
@@ -215,7 +215,7 @@ filterBtns.forEach(btn => {
             // badge: 'ROBOTICS',
             prizePool: '₹20K',
             entryFee: '₹300 / Team',
-            teamSize: 'Up to 4 Members',
+            teamSize: 'Up to 5 Members',
             regLink: 'https://forms.gle/VsK9cbYpfSDF9qZf9',
             rulebook: 'MAZEDRIFT.pdf',
             description: 'Maze Drift is a sophisticated autonomous robotics competition requiring participants to develop bots capable of high-precision line following and maze mapping. The challenge is divided into a "Dry Run" for environmental analysis and memory storage, followed by an "Actual Run" where the bot must calculate and execute the shortest possible path to the terminal zone in minimum time.',
@@ -227,7 +227,7 @@ filterBtns.forEach(btn => {
                 'Points are awarded for checkpoint crossing, successful dry runs, and shortest path optimization.',
                 'Note: Refer to "MAZEDRIFT.pdf" for arena dimensions and logic rules.'
             ],
-            image: 'maze.png',
+            image: 'maze1.jpeg',
             coordinators: [
                 { name: 'GOBIKA N S', phone: '+91 9345531715' },
                 { name: 'BHUVAN RAJ M', phone: '+91 9677564359' }
@@ -1020,3 +1020,4 @@ setInterval(() => {
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
 }, 1000);
+

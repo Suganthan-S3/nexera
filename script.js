@@ -263,7 +263,7 @@ filterBtns.forEach(btn => {
             // subtitle: 'CIRCUIT ESCAPE CHALLENGE',
             // badge: 'CIRCUITS',
             prizePool: '₹2K+',
-            entryFee: '₹250 / Team', // Added entry fee as requested
+            entryFee: '₹150 / Team', // Added entry fee as requested
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSepKLdMSU6M7CjMH-WQxCIc3MW5utn2QzAqT7YFbTtfz04bsA/viewform?usp=header',
             teamSize: '3 Members',
             description: 'Lab Lockdown is an elite technical simulation designed to evaluate engineering fundamentals, logical synthesis, and collaborative problem-solving across all disciplines. Participants are immersed in a high-pressure environment where they must decrypt technical locks and navigate a series of sequential challenges to successfully "unlock" the facility.',
@@ -290,7 +290,7 @@ filterBtns.forEach(btn => {
             prizePool: '₹2K+',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdLZMwZcbuRuV4rbxREqm0gFwBWnR6zoFPdVE6kdPFf18QuCQ/viewform?usp=header',
             teamSize: '2-3 Members',
-            entryFee: '₹250 / team',
+            entryFee: '₹150 / team',
             description: 'A high-intensity, three-stage engineering challenge designed to test visual memory, diagnostic precision, and collaborative problem-solving. Teams must navigate through rapid-fire recalls and complex physical puzzles to prove their mastery over circuit theory and real-world electronics.',
             rules: [
                 'Team Dynamics: Each team must consist of exactly 2–3 participants; report 10 minutes prior to start time.',
@@ -384,7 +384,7 @@ filterBtns.forEach(btn => {
     'Circuitry Pass': {
             title: 'Circuitry Pass',
             prizePool: 'Multi-Event Access',
-            entryFee: '₹399 / Team',
+            entryFee: '₹200 / Team',
             teamSize: '2-3 Members',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLScU8DvB7P1K0dc4vwk_10uZCQWNz9I7ByVlHvk4X-23QDf0Rw/viewform?usp=sharing&ouid=110963580985970388920',
             description: 'Ideal for small teams of 2 to 3 members, this pass offers access to two technical events to test your knowledge and problem-solving skills. The perfect choice for groups looking to compete, collaborate, and enjoy the fest together!',
@@ -581,7 +581,7 @@ filterBtns.forEach(btn => {
             ]
         },
         'Inside SAP': {
-            title: 'Inside SAP: How Technology Runs Global Enterprises',
+            title: 'Inside SAP',
             entryFee: '₹200 / Participant',
             teamSize: 'Individual',
             regLink: 'https://forms.gle/8sHnsk8rHCMdvpgo7', // Replace with your QR/Registration link
@@ -1071,3 +1071,4 @@ setInterval(() => {
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
 }, 1000);
+

@@ -164,6 +164,7 @@ filterBtns.forEach(btn => {
             // subtitle: 'CODEFEST ARENA',
             // badge: 'FLAGSHIP',
             prizePool: '₹30K+',
+            isClosed:true,
             entryFee: '₹200 / Team',
             teamSize: '1-5 Members',
             rulebook: 'Technova_26.pdf',
@@ -493,8 +494,9 @@ filterBtns.forEach(btn => {
             // badge: 'MANAGEMENT',
             prizePool: '₹1,500+',
             teamSize: '3-5 Members',
+            isClosed:true,
             entryFee: '₹150 / team',
-            regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeaIYuCu14qNhYriM03ihE8Q9zLkqNiXxYVXbmkYWqIFibavw/viewform?usp=header',
+            // regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeaIYuCu14qNhYriM03ihE8Q9zLkqNiXxYVXbmkYWqIFibavw/viewform?usp=header',
             description: 'A high-stakes bidding war where teams must balance a massive budget with statistical analysis to build a champion roster. Participants will step into the shoes of franchise owners, using historical data and tactical foresight to outmaneuver rivals in a premium auction environment.',
             rules: [
                 'Participation: Open to 12 teams with a mandatory composition of 3–5 members per squad.',
@@ -573,13 +575,30 @@ filterBtns.forEach(btn => {
             //     'Hardware: Participants must bring their own laptops with at least 8GB RAM and full power backup.',
             //     'Certification: Official certificates will be awarded to all participants upon completion.'
             // ],
-            image: 'ws1.png',
+            image: 'wsn1.jpeg',
             coordinators: [
                 { name: 'Santhosh Kumar G', phone: '+91 9488584119' }
             ]
         },
-        'AI Agent': {
-            title: 'AI Agent',
+        'Inside SAP': {
+            title: 'Inside SAP: How Technology Runs Global Enterprises',
+            entryFee: '₹200 / Participant',
+            teamSize: 'Individual',
+            regLink: 'https://forms.gle/8sHnsk8rHCMdvpgo7', // Replace with your QR/Registration link
+            description: 'A specialized workshop on SAP Enterprise Architecture and ERP systems. Learn how modern global businesses scale using SAP, led by industry expert Mr. Mohammed Jaffer M.',
+            // rules: [
+            //     'Date & Time: 28.02.2026 from 9:30 AM to 1:00 PM',
+            //     'Expert Speaker: Mr. Mohammed Jaffer M (CTO - RH Infos, ERP Architect).',
+            //     'Key Topics: SAP Enterprise Architecture, ERP workflows, and Gen AI application.',
+            //     'Certification: Official certificates will be provided for all active participants.'
+            // ],
+            image: 'wsn3.jpeg',
+            coordinators: [
+                { name: 'Sanjeevi V S', phone: '+91 6381215006' }
+            ]
+        },
+        'Zero Code Agents': {
+            title: 'Zero Code Agents',
             // prizePool: 'Certification + Project Demo',
             entryFee: '₹200 / Participant',
             teamSize: 'Individual',
@@ -591,7 +610,7 @@ filterBtns.forEach(btn => {
             //     'Requirements: Laptops with Python installed and access to LLM APIs.',
             //     'Termination: Session concludes with a demo and certificate distribution.'
             // ],
-            image: 'ws2.png',
+            image: 'wsn2.jpeg',
             coordinators: [
                 { name: 'Logesh Kumar R', phone: '+91 7845037439' }
             ]
@@ -616,6 +635,7 @@ filterBtns.forEach(btn => {
         rulesContent.style.maxHeight = '0px';
         rulesIcon.style.transform = 'rotate(0deg)';
     });
+    const eventModalRegBtn = document.querySelector('#event-modal .cosmic-btn');
 
     // Function to close modal
 const closeModal = () => {
@@ -637,6 +657,21 @@ window.addEventListener('popstate', () => {
         closeModal();
     }
 });
+eventCards.forEach(card => {
+    const title = card.querySelector('h3').textContent.trim();
+    const data = eventData[title];
+    
+    if (data && data.isClosed) {
+        // Add a "Closed" badge to the card
+        const closedBadge = document.createElement('span');
+        closedBadge.className = "absolute top-2 right-2 bg-red-600/80 text-white text-[8px] px-2 py-1 rounded font-bold";
+        closedBadge.textContent = "CLOSED";
+        card.appendChild(closedBadge);
+        card.style.filter = "grayscale(0.5)";
+    }
+
+});
+
 eventCards.forEach(card => {
     
     card.addEventListener('click', () => {
@@ -680,6 +715,22 @@ eventCards.forEach(card => {
                 activeRegLink = data.regLink; 
             }
 
+                // --- REGISTRATION CLOSED LOGIC ---
+// --- REGISTRATION CLOSED LOGIC ---
+// We use the variable 'eventModalRegBtn' which is already declared at the bottom of your script
+if (data.isClosed) {
+    eventModalRegBtn.innerHTML = `REGISTRATION CLOSED <i class="fas fa-lock ml-2"></i>`;
+    eventModalRegBtn.style.background = "linear-gradient(90deg, #4b5563, #1f2937)"; 
+    eventModalRegBtn.style.opacity = "0.6";
+    eventModalRegBtn.style.cursor = "not-allowed";
+    eventModalRegBtn.style.pointerEvents = "none"; 
+} else {
+    eventModalRegBtn.innerHTML = `Register Now <i class="fas fa-bolt group-hover:scale-125 transition-transform"></i>`;
+    eventModalRegBtn.style.background = ""; 
+    eventModalRegBtn.style.opacity = "1";
+    eventModalRegBtn.style.cursor = "pointer";
+    eventModalRegBtn.style.pointerEvents = "auto";
+}
             // --- 3. POPULATE CONTENT ---
             modalTitle.textContent = data.title;
             modalSubtitle.textContent = data.subtitle || "";
@@ -853,7 +904,7 @@ const verifyModal = document.getElementById('combo-verify-modal');
 const closeVerifyBtn = document.getElementById('close-verify-btn');
 const goToComboBtn = document.getElementById('go-to-combo-btn');
 const proceedRegBtn = document.getElementById('proceed-reg-link');
-const eventModalRegBtn = document.querySelector('#event-modal .cosmic-btn');
+
 
 let activeRegLink = ""; // Temporary storage for the current event's link
 const comboTriggerEvents = ['Circuit Wars', 'Lab Lockdown', 'Coding Marathon', 'Prompt Verse'];
@@ -1020,4 +1071,3 @@ setInterval(() => {
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
 }, 1000);
-

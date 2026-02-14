@@ -359,6 +359,7 @@ filterBtns.forEach(btn => {
             // subtitle: 'Investigation Challenge',
             // badge: 'MYSTERY',
             prizePool: '₹1,500+',
+            isClosed:true,
             teamSize: 'Teams',
             entryFee: '₹150 / team',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeihMYHhZhKzjd_wqzwEThylefpt7eGUh6TqNRHlQ46DR73ow/viewform?usp=sharing&ouid=110963580985970388920',
@@ -418,6 +419,38 @@ filterBtns.forEach(btn => {
                 {name:'Kanishkar S',phone:'7418994553' }
             ]
         },
+        'Dual Workshops': {
+    title: 'Dual Workshops',
+    
+    entryFee: '₹300 / Participant',
+    teamSize: 'Individual',
+    regLink: '', 
+    description: 'This Pass is engineered for specialists. Select any TWO technical workshops to accelerate your expertise in emerging architectures, from ERP systems to autonomous AI agents.',
+    includedEvents: {
+        technical: ['Choose any 2 Workshops']
+    },
+    image: 'work.jpeg', // Use one of your workshop images
+    coordinators: [
+        { name: 'Sabreeshwaran', phone: '8870247551' },
+        { name: 'Kanishkar S', phone: '7418994553' }
+    ]
+},
+'Triple Workshops': {
+    title: 'Triple Workshops',
+
+    entryFee: '₹400 / Participant',
+    teamSize: 'Individual',
+    regLink: '',
+    description: 'The ultimate knowledge uplink. Gain unrestricted access to all THREE specialized workshops: Inside SAP, Cyber Security, and Zero Code Agents.',
+    includedEvents: {
+        technical: ['Inside SAP', 'Cyber Security', 'Zero Code Agents']
+    },
+    image: 'work.jpeg',
+    coordinators: [
+        { name: 'Sabreeshwaran', phone: '8870247551' },
+        { name: 'Kanishkar S', phone: '7418994553' }
+    ]
+},
 
         'Carrom': {
             title: 'Carrom',
@@ -793,7 +826,7 @@ if (isCombo && data.includedEvents) {
         <div class="space-y-4 pt-4 border-t border-white/10 mt-4">
             <div>
                 <h4 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
-                    <i class="fas fa-microchip"></i> Technical Modules Included
+                    <i class="fas fa-microchip"></i> Technical Events Included
                 </h4>
                 <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 ml-2">${techItems}</ul>
             </div>`;
@@ -802,7 +835,7 @@ if (isCombo && data.includedEvents) {
         comboHtml += `
             <div>
                 <h4 class="text-purple-400 font-bold text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
-                    <i class="fas fa-star"></i> Non-Technical Access
+                    <i class="fas fa-star"></i> Non-Technical Events Included
                 </h4>
                 <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 ml-2">${nonTechItems}</ul>
             </div>`;
@@ -907,7 +940,7 @@ const proceedRegBtn = document.getElementById('proceed-reg-link');
 
 
 let activeRegLink = ""; // Temporary storage for the current event's link
-const comboTriggerEvents = ['Circuit Wars', 'Lab Lockdown', 'Coding Marathon', 'Prompt Verse'];
+const comboTriggerEvents = ['Circuit Wars', 'Lab Lockdown', 'Coding Marathon', 'Prompt Verse','Inside SAP', 'Cyber Security', 'Zero Code Agents'];
 
 eventModalRegBtn.addEventListener('click', (e) => {
     // 1. Stop any default behavior
@@ -1071,4 +1104,3 @@ setInterval(() => {
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
 }, 1000);
-

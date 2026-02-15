@@ -440,7 +440,7 @@ filterBtns.forEach(btn => {
 
     entryFee: '₹400 / Participant',
     teamSize: 'Individual',
-    regLink: '',
+    regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSf0yuMSAfdtJwCEZL5gMu0-M41lipIGqxG51gn-KspmuNl2sQ/viewform?usp=publish-editor',
     description: 'The ultimate knowledge uplink. Gain unrestricted access to all THREE specialized workshops: Inside SAP, Cyber Security, and Zero Code Agents.',
     includedEvents: {
         technical: ['Inside SAP', 'Cyber Security', 'Zero Code Agents']
@@ -1104,4 +1104,5 @@ setInterval(() => {
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
 }, 1000);
+
 

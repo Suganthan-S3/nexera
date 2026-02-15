@@ -424,7 +424,7 @@ filterBtns.forEach(btn => {
     
     entryFee: '₹300 / Participant',
     teamSize: 'Individual',
-    regLink: '', 
+    regLink: 'https://forms.gle/kJs6Ngi3fN4ZmGJK7', 
     description: 'This Pass is engineered for specialists. Select any TWO technical workshops to accelerate your expertise in emerging architectures, from ERP systems to autonomous AI agents.',
     includedEvents: {
         technical: ['Choose any 2 Workshops']
@@ -1104,3 +1104,4 @@ setInterval(() => {
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
 }, 1000);
+

@@ -150,7 +150,8 @@ filterBtns.forEach(btn => {
                 'Submission Deadline: Both the technical paper and the presentation slides must be submitted prior to the designated lockout time.',
                 'Standardization: Participants must utilize the official NEXERA template provided on the website for their presentation.',
                 'Judging Criteria: Rankings are determined by a predefined marks split-up focusing on innovation, feasibility, and clarity.',
-                'Finality: The jury’s assessment is absolute and will determine the top three overall winners.'
+                'Finality: The jury’s assessment is absolute and will determine the top three overall winners.',
+                'Registration fees are strictly non-refundable for all scenarios.'
             ],
             image: 'paper.png',
             coordinators: [
@@ -177,7 +178,8 @@ filterBtns.forEach(btn => {
                 'Registration Fee: ₹200 for Round 1 Registration (Abstract Submission); shortlisted teams need to pay ₹300 during Round 2 Registration.',
                 'Timeline: Registration deadline is 12th FEB 2026; Grand Finale on 28th FEB 2026.',
                 'Themes: Smart Automation, Healthtech, Agriculture, IoT, 5G, Robotics, Smart Vehicles, and more.',
-                'Certificates: Participation certificates will be provided to all registered participants.'              
+                'Certificates: Participation certificates will be provided to all registered participants.',
+                'Registration fees are strictly non-refundable for all scenarios.'             
             ],
             image: 'hackathon.png',
             coordinators: [
@@ -202,7 +204,8 @@ filterBtns.forEach(btn => {
                 'Mechanisms for grabbing, scooping, or lifting the ball are strictly prohibited; only pushing or hitting is allowed.',
                 'Excessive ramming or intentional attempts to damage an opponent’s bot will result in immediate disqualification.',
                 'A maximum of 3 restarts are permitted per match, with the timer remaining active throughout.',
-                'Note: Refer to "cyber_kick.docx" for full technical arena specifications.'
+                'Note: Refer to "cyber_kick.docx" for full technical arena specifications.',
+                'Registration fees are strictly non-refundable for all scenarios.'
             ],
             image: 'cyber1.jpeg',
             coordinators: [
@@ -226,7 +229,8 @@ filterBtns.forEach(btn => {
                 'Bots must be equipped with a red LED that illuminates upon sensing the terminal black box.',
                 'Maximum of 3 restarts are allowed; however, the timer will not be paused or reset.',
                 'Points are awarded for checkpoint crossing, successful dry runs, and shortest path optimization.',
-                'Note: Refer to "MAZEDRIFT.pdf" for arena dimensions and logic rules.'
+                'Note: Refer to "MAZEDRIFT.pdf" for arena dimensions and logic rules.',
+                'Registration fees are strictly non-refundable for all scenarios.'
             ],
             image: 'maze1.jpeg',
             coordinators: [
@@ -250,7 +254,8 @@ filterBtns.forEach(btn => {
                 'Blocks must be lifted and placed; dragging or sliding across the floor is strictly forbidden.',
                 'Onboard power supply must not exceed a potential difference of 15V DC.',
                 'Human intervention is strictly limited to repositioning the bot at designated checkpoints.',
-                'Note: Refer to "pick n place.docx" for detailed scoring and penalty criteria.'
+                'Note: Refer to "pick n place.docx" for detailed scoring and penalty criteria.',
+                'Registration fees are strictly non-refundable for all scenarios.'
             ],
             image: 'lift.jpeg',
             coordinators: [
@@ -274,7 +279,8 @@ filterBtns.forEach(btn => {
                 'Round 3 (System Synthesis): The terminal round requiring precision circuit building based on the previous round’s intelligence.',
                 'Zero-Device Policy: Mobile phones, smartwatches, and all electronic gadgets are strictly prohibited.',
                 'Punctuality: Teams must report to the station 15 minutes prior to the scheduled commencement.',
-                'Final Authority: All adjudicator and coordinator decisions are absolute and binding.'
+                'Final Authority: All adjudicator and coordinator decisions are absolute and binding.',
+                'Registration fees are strictly non-refundable for all scenarios.'
             ],
             image: 'lablockdown.png',
             coordinators: [
@@ -298,7 +304,8 @@ filterBtns.forEach(btn => {
                 'Blink & Think: A 25-minute rapid-fire round requiring teams to recall details of circuits or waveforms.',
                 'Fault Hunt: A 25-minute diagnostic round where teams must identify the maximum number of errors in a complex circuit.',
                 'Circuit Escape Room: A 40-minute immersive finale where solving electronics puzzles is the only way to win.',
-                'Integrity: All decisions by adjudicators are final; cross-team collaboration is strictly forbidden.'
+                'Integrity: All decisions by adjudicators are final; cross-team collaboration is strictly forbidden.',
+                'Registration fees are strictly non-refundable for all scenarios.'
             ],
             image: 'circuit wars.png',
             coordinators: [
@@ -322,6 +329,7 @@ filterBtns.forEach(btn => {
                 'Round 1 (Precision): 10-image challenge testing direct observation and rapid memory recall.',
                 'Round 2 (Coordination): Split-vision challenge where partners describe separate image halves to generate a unified result.',
                 'Round 3 (Creative): On-the-spot thematic video generation and conceptual presentation.',
+                'Registration fees are strictly non-refundable for all scenarios.'
             ],
             image: 'prompt.png',
             coordinators: [
@@ -345,7 +353,8 @@ filterBtns.forEach(btn => {
                 'The Swap: At the midpoint, participants must exchange places and continue only with the code provided by their partner.',
                 'Development: Post-swap debugging, optimization, and resubmission of existing solutions are permitted.',
                 'Integrity: The use of unauthorized external assistance or unfair means will result in immediate disqualification.',
-                'Technical Note: Participants are encouraged to bring their own laptops for the competition.'
+                'Technical Note: Participants are encouraged to bring their own laptops for the competition.',
+                'Registration fees are strictly non-refundable for all scenarios.'
             ],
             image: 'coding relay.png',
             coordinators: [
@@ -372,7 +381,8 @@ filterBtns.forEach(btn => {
                 'Tampering with clues or sharing answers between teams is prohibited.',
                 'Correctly uncovering the truth with proper justification is required to win.',
                 'The event will run for 2 hours (2:00 PM – 4:00 PM).',
-                'The decision of the event coordinators is final and binding.'
+                'The decision of the event coordinators is final and binding.',
+                'Registration fees are strictly non-refundable for all scenarios.'
             ],
             image: 'treasure_hunt.png',
             coordinators: [
@@ -388,7 +398,7 @@ filterBtns.forEach(btn => {
             entryFee: '₹200 / Team',
             teamSize: '2-3 Members',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLScU8DvB7P1K0dc4vwk_10uZCQWNz9I7ByVlHvk4X-23QDf0Rw/viewform?usp=sharing&ouid=110963580985970388920',
-            description: 'Ideal for small teams of 2 to 3 members, this pass offers access to two technical events to test your knowledge and problem-solving skills. The perfect choice for groups looking to compete, collaborate, and enjoy the fest together!',
+            description: 'Ideal for small teams of 2 to 3 members, this pass offers access to two technical events to test your knowledge and problem-solving skills. The perfect choice for groups looking to compete, collaborate, and enjoy the fest together!. Registration fees are strictly non-refundable for all scenarios.',
             includedEvents: {
                 technical: ['Circuit Wars', 'Lab Lockdown'],
                 // nonTechnical: []
@@ -405,7 +415,7 @@ filterBtns.forEach(btn => {
             entryFee: '₹349 / team', 
             teamSize: 'Exactly 2 Members',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeeB2CM_Bp1fqQJnAuEm6jgTgX2vQbM-D9uLj1SB7EYQ2jYFg/viewform?usp=header',
-            description: 'Designed for pairs, this pass gives two participants entry to two technical events to showcase skills and innovation, additionally with 50% off on one non-technical event to relax and have fun. A perfect mix of learning, competition, and entertainment for an unforgettable fest experience.',
+            description: 'Designed for pairs, this pass gives two participants entry to two technical events to showcase skills and innovation, additionally with 50% off on one non-technical event to relax and have fun. A perfect mix of learning, competition, and entertainment for an unforgettable fest experience. Registration fees are strictly non-refundable for all scenarios.',
             includedEvents: {
                 technical: ['Coding Relay', 'Prompt Verse'],
                 nonTechnical: [
@@ -425,7 +435,7 @@ filterBtns.forEach(btn => {
     entryFee: '₹300 / Participant',
     teamSize: 'Individual',
     regLink: 'https://forms.gle/kJs6Ngi3fN4ZmGJK7', 
-    description: 'This Pass is engineered for specialists. Select any TWO technical workshops to accelerate your expertise in emerging architectures, from ERP systems to autonomous AI agents.',
+    description: 'This Pass is engineered for specialists. Select any TWO technical workshops to accelerate your expertise in emerging architectures, from ERP systems to autonomous AI agents. Registration fees are strictly non-refundable for all scenarios.',
     includedEvents: {
         technical: ['Choose any 2 Workshops']
     },
@@ -441,7 +451,7 @@ filterBtns.forEach(btn => {
     entryFee: '₹400 / Participant',
     teamSize: 'Individual',
     regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSf0yuMSAfdtJwCEZL5gMu0-M41lipIGqxG51gn-KspmuNl2sQ/viewform?usp=publish-editor',
-    description: 'The ultimate knowledge uplink. Gain unrestricted access to all THREE specialized workshops: Inside SAP, Cyber Security, and Zero Code Agents.',
+    description: 'The ultimate knowledge uplink. Gain unrestricted access to all THREE specialized workshops: Inside SAP, Cyber Security, and Zero Code Agents. Registration fees are strictly non-refundable for all scenarios.',
     includedEvents: {
         technical: ['Inside SAP', 'Cyber Security', 'Zero Code Agents']
     },
@@ -466,7 +476,8 @@ filterBtns.forEach(btn => {
                 'Scoring: Black coin – 1 point',
                 'Scoring: White coin – 1 point',
                 'Scoring: Red coin (Queen) – 3 points (if pocketed by winning team)',
-                'Fouls, penalties, and special rules will be announced later'
+                'Fouls, penalties, and special rules will be announced later',
+                'Registration fees are strictly non-refundable for all scenarios.'
             ],
             image: 'carrom.png',
             coordinators: [
@@ -492,7 +503,8 @@ filterBtns.forEach(btn => {
                 'Entry Protocol: A registration fee of ₹50 is mandatory for all participants.',
                 'Arbitration: The Arbiter’s decision is final and binding in all match scenarios.',
                 'Certification: Participation certificates will be awarded to all registered players.',
-                'Finality: Prize distribution will take place immediately at the conclusion of the event.'
+                'Finality: Prize distribution will take place immediately at the conclusion of the event.',
+                'Registration fees are strictly non-refundable for all scenarios.'
             ],
             image: 'chess.png',
             coordinators: [
@@ -513,7 +525,8 @@ filterBtns.forEach(btn => {
                     'Individual participation is allowed.',
                     'First round consists of 20 questions.',
                     'Second round consists of 15 questions.',
-                    'The final score will be a consolidation of both rounds.'],
+                    'The final score will be a consolidation of both rounds.',
+                'Registration fees are strictly non-refundable for all scenarios.'],
             image: 'quiz.png',
             coordinators: [
                 { name: 'Kritheeka K', phone: '+91 9679523479' },
@@ -537,7 +550,8 @@ filterBtns.forEach(btn => {
                 'Roster Requirements: Teams must secure a minimum of 8 players and a maximum of 10 players to complete their squad.',
                 'Player Valuation: Selection is guided by "Player Points" based on 5-year performance data from T20Is and the IPL.',
                 'Auction Protocol: Standard bidding increments apply; the highest bidder at the fall of the hammer secures the player.',
-                'Entry Requirement: A registration fee of ₹150 per team must be settled prior to the commencement.'
+                'Entry Requirement: A registration fee of ₹150 per team must be settled prior to the commencement.',
+                'Registration fees are strictly non-refundable for all scenarios.'
             ],
             image: 'ipl.png',
             coordinators: [
@@ -562,7 +576,8 @@ filterBtns.forEach(btn => {
                 'Final Stage (Clash Squad): Strictly Face-to-Face combat; no rooftop camping or Gloo Wall jumping.',
                 'Equipment (Finals): Gun Attributes, Loadouts, and Airdrops are completely disabled.',
                 'Gloo Wall Ethics: Breaking or destroying an opponent’s Gloo Wall is strictly prohibited and jumping into the gloo wall is also strictly prohibited.',
-                'Tactical Limits: Grenades are restricted; however, unlimited ammo and standard throwables are enabled.'
+                'Tactical Limits: Grenades are restricted; however, unlimited ammo and standard throwables are enabled.',
+                'Registration fees are strictly non-refundable for all scenarios.'
             ],
             image: 'free_fire.png',
             coordinators: [
@@ -587,7 +602,8 @@ filterBtns.forEach(btn => {
                 'Technical Protocol: No rematches will be provided for disconnections; the remaining active player will be awarded the victory.',
                 'Verification: Participants must capture and submit screenshots with player names immediately post-match.',
                 'Scoring (League): Wins award 3 points, Draws award 1 point, and Losses award 0 points.',
-                'Deadline: Matches must be initiated and completed within the designated tournament windows.'
+                'Deadline: Matches must be initiated and completed within the designated tournament windows.',
+                'Registration fees are strictly non-refundable for all scenarios.'
             ],
             image: 'efootball.png',
             coordinators: [
@@ -602,7 +618,7 @@ filterBtns.forEach(btn => {
             entryFee: '₹200 / Participant',
             teamSize: 'Individual',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeUGoy5WKSOliXfghg8RCdqDxU18chcVv-3GlATkx8_K8RcNA/viewform?usp=sharing&ouid=110963580985970388920', 
-            description: 'Participants will gain practical exposure to cybersecurity concepts, tools, and real-world attack scenarios. The session focuses on ethical hacking basics, system security, and threat awareness. Participants are required to bring their laptops for hands-on activities. Certificates will be awarded to all participants upon completion.',
+            description: 'Participants will gain practical exposure to cybersecurity concepts, tools, and real-world attack scenarios. The session focuses on ethical hacking basics, system security, and threat awareness. Participants are required to bring their laptops for hands-on activities. Certificates will be awarded to all participants upon completion. Registration fees are strictly non-refundable for all scenarios.',
             // rules: [
             //     'Session Flow: Moves from Information Gathering to Network Security and Web Penetration Testing.',
             //     'Hardware: Participants must bring their own laptops with at least 8GB RAM and full power backup.',
@@ -618,7 +634,7 @@ filterBtns.forEach(btn => {
             entryFee: '₹200 / Participant',
             teamSize: 'Individual',
             regLink: 'https://forms.gle/8sHnsk8rHCMdvpgo7', // Replace with your QR/Registration link
-            description: 'A specialized workshop on SAP Enterprise Architecture and ERP systems. Learn how modern global businesses scale using SAP, led by industry expert Mr. Mohammed Jaffer M.',
+            description: 'A specialized workshop on SAP Enterprise Architecture and ERP systems. Learn how modern global businesses scale using SAP, led by industry expert Mr. Mohammed Jaffer M. Registration fees are strictly non-refundable for all scenarios.',
             // rules: [
             //     'Date & Time: 28.02.2026 from 9:30 AM to 1:00 PM',
             //     'Expert Speaker: Mr. Mohammed Jaffer M (CTO - RH Infos, ERP Architect).',
@@ -636,7 +652,7 @@ filterBtns.forEach(btn => {
             entryFee: '₹200 / Participant',
             teamSize: 'Individual',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSc87J0vB-4ncBTUL87PucEZygIK-Wz0oYvwWUSpQP61I_KjIA/viewform', 
-            description: 'The session introduces the concept of intelligent AI agents and how they autonomously perform tasks. Basic understanding of AI or programming is helpful but not mandatory for this Workshop. Participants are required to bring their laptops for hands-on activities. Certificates will be awarded to all participants upon completion.',
+            description: 'The session introduces the concept of intelligent AI agents and how they autonomously perform tasks. Basic understanding of AI or programming is helpful but not mandatory for this Workshop. Participants are required to bring their laptops for hands-on activities. Certificates will be awarded to all participants upon completion. Registration fees are strictly non-refundable for all scenarios.',
             // rules: [
             //     'Frameworks: Hands-on experience with LangChain, CrewAI, and vector databases.',
             //     'Hands-on: Build and showcase a custom AI assistant or a real-time research agent.',
@@ -1104,5 +1120,3 @@ setInterval(() => {
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
 }, 1000);
-
-

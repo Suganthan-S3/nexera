@@ -562,22 +562,18 @@ filterBtns.forEach(btn => {
         },
         'Free Fire': {
             title: 'Free Fire',
-            // subtitle: 'BATTLE ROYALE TO CLASH SQUAD',
-            // badge: 'ESPORTS',
-            prizePool: '₹1,500+',
+            
+            prizePool: '₹1,000+',
             teamSize: 'Squad',
-            entryFee: '₹150 / team',
+            entryFee: '₹50 / team',
             regLink:'https://docs.google.com/forms/d/e/1FAIpQLSdZbqsc7fBA7kPmkOYzgpCRUSuXiJfL4AfyGJUXBX0e56ozzA/viewform?usp=header',
-            description: 'Experience the ultimate test of combat prowess in a high-stakes transition from tactical Battle Royale to intense Clash Squad finishers. Teams must first master the art of survival and elimination on the large map to earn their place in the final high-speed close-quarters showdown. This dual-format tournament identifies the most versatile squad capable of dominating both long-range strategy and face-to-face combat.',
+            description: 'Transitioning from the vast battleground to the intense Clash Squad arena. This format is a high-speed, round-based tactical showdown where squads face off in close-quarters combat. Success depends on rapid coordination, weapon mastery, and strategic positioning under strict equipment protocols.',
             rules: [
-                'Qualifying Stage: Points Table System based on Placement and Elimination (Kill) points.',
-                'Revival Restriction: Use of Revive Cards or Revive Centers results in immediate disqualification.',
-                'Qualifying Advancement: Only the Top 4 teams from the points table advance to the Final Stage.',
-                'Final Stage (Clash Squad): Strictly Face-to-Face combat; no rooftop camping or Gloo Wall jumping.',
-                'Equipment (Finals): Gun Attributes, Loadouts, and Airdrops are completely disabled.',
-                'Gloo Wall Ethics: Breaking or destroying an opponent’s Gloo Wall is strictly prohibited and jumping into the gloo wall is also strictly prohibited.',
+                'Format: Strictly Clash Squad (CS) mode; rooftop camping or Gloo Wall jumping allowed.',
+                'Equipment: Gun Attributes, Loadouts, and Airdrops are completely disabled to ensure competitive integrity.',
                 'Tactical Limits: Grenades are restricted; however, unlimited ammo and standard throwables are enabled.',
-                'Registration fees are strictly non-refundable for all scenarios.'
+                'Gloo Wall Ethics: Breaking an opponent’s Gloo Wall is strictly prohibited.',
+                'Match Conduct: Intentional glitches or exploitation of map bugs will result in immediate disqualification.'
             ],
             image: 'free_fire.png',
             coordinators: [
@@ -589,7 +585,7 @@ filterBtns.forEach(btn => {
             title: 'E-Football',
             // subtitle: 'VIRTUAL PITCH GLORY',
             // badge: 'ESPORTS',
-            prizePool: '₹1,500+',
+            prizePool: '₹1,000+',
             entryFee: '₹50 / Participant',
             teamSize: 'Individual',
             regLink:'https://docs.google.com/forms/d/e/1FAIpQLScZit1f-04dstFeMpKeRN7dD6mEE0X_urssoB7K5GeQ9OkuZA/viewform?usp=header',
@@ -1120,3 +1116,4 @@ setInterval(() => {
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
 }, 1000);
+

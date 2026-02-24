@@ -195,7 +195,7 @@ filterBtns.forEach(btn => {
             prizePool: '₹20K',
             entryFee: '₹300 / Team', 
             regLink: 'https://forms.gle/WWNiNaqffcK8xzoS6',
-            rulebook: 'cyber_kick.docx',
+            rulebook: 'cyber_kick_rulebook.docx',
             teamSize: 'Up to 4 Members',
             description: 'Cyber Kick is an elite competitive arena where engineering meets athletic strategy. This event challenges teams to design and build manually controlled robots capable of high-speed maneuvers, precise ball handling, and tactical real-time gameplay. It serves as a rigorous test of system integration, wireless communication reliability, and operational stability under match conditions.',
             rules: [
@@ -1116,4 +1116,5 @@ setInterval(() => {
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
 }, 1000);
+
 

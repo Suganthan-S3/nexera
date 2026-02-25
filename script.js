@@ -139,6 +139,7 @@ filterBtns.forEach(btn => {
             // badge: 'FLAGSHIP',
             prizePool: '₹6K+',
             entryFee: '₹250 / team',
+            isOnSpotOnly: true,
             teamSize: '3-4 Members',
             rulebook: 'Paper presentation template.pptx',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSe8x2DUBUwJnjFt-GHpMm-MNrsz4K7dUQRKwFvhYDO6yQT-wg/viewform?usp=sharing&ouid=110963580985970388920',
@@ -195,7 +196,7 @@ filterBtns.forEach(btn => {
             prizePool: '₹20K',
             entryFee: '₹300 / Team', 
             regLink: 'https://forms.gle/WWNiNaqffcK8xzoS6',
-            rulebook: 'cyber_kick_rulebook.docx',
+            rulebook: 'cyber_kick.docx',
             teamSize: 'Up to 4 Members',
             description: 'Cyber Kick is an elite competitive arena where engineering meets athletic strategy. This event challenges teams to design and build manually controlled robots capable of high-speed maneuvers, precise ball handling, and tactical real-time gameplay. It serves as a rigorous test of system integration, wireless communication reliability, and operational stability under match conditions.',
             rules: [
@@ -761,20 +762,31 @@ eventCards.forEach(card => {
             }
 
                 // --- REGISTRATION CLOSED LOGIC ---
-// --- REGISTRATION CLOSED LOGIC ---
-// We use the variable 'eventModalRegBtn' which is already declared at the bottom of your script
+
+const regBtn = document.querySelector('#event-modal .cosmic-btn');
+const regBtnText = regBtn ? regBtn.querySelector('span') : null;
 if (data.isClosed) {
     eventModalRegBtn.innerHTML = `REGISTRATION CLOSED <i class="fas fa-lock ml-2"></i>`;
     eventModalRegBtn.style.background = "linear-gradient(90deg, #4b5563, #1f2937)"; 
     eventModalRegBtn.style.opacity = "0.6";
     eventModalRegBtn.style.cursor = "not-allowed";
     eventModalRegBtn.style.pointerEvents = "none"; 
+    activeRegLink = ""; 
+} else if (data.isOnSpotOnly) {
+    // New State: For events that only register at the venue
+    eventModalRegBtn.innerHTML = `ON-SPOT REGISTRATION ONLY <i class="fas fa-map-marker-alt ml-2"></i>`;
+    eventModalRegBtn.style.background = "linear-gradient(90deg, #10b981, #059669)"; // Emerald Green
+    eventModalRegBtn.style.opacity = "1";
+    eventModalRegBtn.style.cursor = "default";
+    eventModalRegBtn.style.pointerEvents = "none"; // Disable clicking since there's no link
+    activeRegLink = ""; 
 } else {
     eventModalRegBtn.innerHTML = `Register Now <i class="fas fa-bolt group-hover:scale-125 transition-transform"></i>`;
     eventModalRegBtn.style.background = ""; 
     eventModalRegBtn.style.opacity = "1";
     eventModalRegBtn.style.cursor = "pointer";
     eventModalRegBtn.style.pointerEvents = "auto";
+    activeRegLink = data.regLink || "";
 }
             // --- 3. POPULATE CONTENT ---
             modalTitle.textContent = data.title;
@@ -1116,5 +1128,3 @@ setInterval(() => {
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
 }, 1000);
-
-

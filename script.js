@@ -415,7 +415,8 @@ filterBtns.forEach(btn => {
         'Cipher Pass': {
             title: 'Cipher Pass',
             prizePool: 'Multi-Event Access',
-            entryFee: '₹349 / team', 
+            entryFee: '₹349 / team',
+            isOnSpotOnly: true,
             teamSize: 'Exactly 2 Members',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeeB2CM_Bp1fqQJnAuEm6jgTgX2vQbM-D9uLj1SB7EYQ2jYFg/viewform?usp=header',
             description: 'Designed for pairs, this pass gives two participants entry to two technical events to showcase skills and innovation, additionally with 50% off on one non-technical event to relax and have fun. A perfect mix of learning, competition, and entertainment for an unforgettable fest experience. Registration fees are strictly non-refundable for all scenarios.',
@@ -1130,5 +1131,6 @@ setInterval(() => {
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
 }, 1000);
+
 
 

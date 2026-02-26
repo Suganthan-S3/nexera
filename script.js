@@ -320,6 +320,7 @@ filterBtns.forEach(btn => {
             // subtitle: 'AI Mastery',
             // badge: 'AI/ML',
             prizePool: '₹2K+ ',
+            isOnSpotOnly: true,
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfH_3tDdJz15R4BX4pjW7FkaXCVjUhzRQLLwEPTFHCWy5f2uQ/viewform?usp=header',
             teamSize: '2 Members', // Updated from Individual to match your new rules
             entryFee: '₹200 / team',
@@ -1129,4 +1130,5 @@ setInterval(() => {
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
 }, 1000);
+
 

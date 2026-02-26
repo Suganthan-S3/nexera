@@ -578,7 +578,6 @@ filterBtns.forEach(btn => {
             title: 'Free Fire',
             
             prizePool: '₹1,000+',
-            isOnSpotOnly: true,
             teamSize: 'Squad',
             entryFee: '₹50 / team',
             regLink:'https://docs.google.com/forms/d/e/1FAIpQLSdZbqsc7fBA7kPmkOYzgpCRUSuXiJfL4AfyGJUXBX0e56ozzA/viewform?usp=header',
@@ -601,7 +600,6 @@ filterBtns.forEach(btn => {
             // subtitle: 'VIRTUAL PITCH GLORY',
             // badge: 'ESPORTS',
             prizePool: '₹1,000+',
-            isOnSpotOnly: true,
             entryFee: '₹50 / Participant',
             teamSize: 'Individual',
             regLink:'https://docs.google.com/forms/d/e/1FAIpQLScZit1f-04dstFeMpKeRN7dD6mEE0X_urssoB7K5GeQ9OkuZA/viewform?usp=header',
@@ -1146,4 +1144,5 @@ setInterval(() => {
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
 }, 1000);
+
 

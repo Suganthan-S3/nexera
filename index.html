@@ -211,7 +211,7 @@
                     </div>
                 </div>
 
-                <div class="reveal-child interactable event-card tilt-card card-flagship group cursor-pointer" data-category="flagship">
+                <!-- <div class="reveal-child interactable event-card tilt-card card-flagship group cursor-pointer" data-category="flagship">
                     <div class="p-6 flex:none flex-col h-full card-content">
                         <div class="flex justify-between items-start mb-4">
                             <span class="text-[10px] font-bold tracking-widest text-yellow-400 bg-yellow-900/30 px-2 py-0.5 rounded w-max">ROBOTICS</span>
@@ -223,7 +223,7 @@
                             <span class="text-xs font-mono">View Details</span><span class="text-xl">→</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="reveal-child interactable event-card tilt-card card-workshop group cursor-pointer" data-category="workshop" data-status="workshop">
                      <div class="p-6 flex:none flex-col h-full card-content">
@@ -528,21 +528,23 @@
             </div>
         </div>
         
-        <div class="timeline-item mb-12 relative md:w-1/2 md:pr-12 md:text-right" data-session="d1-fn">
+        
+        <div class="timeline-item mb-12 relative md:w-1/2 md:ml-auto md:pl-12" data-session="d1-fn">
+            <div class="time-pointer hidden md:block absolute top-2 -left-2 w-4 h-4 rounded-full bg-blue-500"></div>
+            <div class="glass-panel p-5 rounded-xl border-t-2 border-blue-500">
+                <span class="text-blue-400 font-mono text-sm font-bold tracking-tighter">10:00 AM — 04:00 PM</span>
+                <h4 class="text-xl font-bold text-white orbitron mt-1">Paper Presentation</h4>
+            </div>
+        </div>
+        <!-- <div class="timeline-item mb-12 relative md:w-1/2 md:pr-12 md:text-right" data-session="d1-fn">
             <div class="time-pointer hidden md:block absolute top-2 -right-2 w-4 h-4 rounded-full bg-blue-500"></div>
             <div class="glass-panel p-5 rounded-xl border-t-2 border-blue-500">
                 <span class="text-blue-400 font-mono text-sm font-bold tracking-tighter">10:00 AM — 04:00 PM</span>
                 <h4 class="text-xl font-bold text-white orbitron mt-1">Paper Presentation</h4>
             </div>
         </div>
-        
-        <div class="timeline-item mb-12 relative md:w-1/2 md:ml-auto md:pl-12" data-session="d1-fn">
-            <div class="time-pointer hidden md:block absolute top-2 -left-2 w-4 h-4 rounded-full bg-blue-500"></div>
-            <div class="glass-panel p-5 rounded-xl border-t-2 border-blue-500">
-                <span class="text-blue-400 font-mono text-sm font-bold tracking-tighter">10:00 AM — 01:00 PM</span>
-                <h4 class="text-xl font-bold text-white orbitron mt-1">Cyber Kick</h4>
-            </div>
-        </div>
+         -->
+
 
         <div class="timeline-item mb-12 relative md:w-1/2 md:pr-12 md:text-right" data-session="d1-fn">
             <div class="time-pointer hidden md:block absolute top-2 -right-2 w-4 h-4 rounded-full bg-blue-500"></div>
@@ -942,6 +944,9 @@
         <!-- <h3 class="orbitron text-2xl font-bold text-white mb-4">OPTIMIZE YOUR UPLINK</h3> -->
         <p class="text-gray-300 mb-8 leading-relaxed">
             Take a moment to view our combo passes and choose what fits your squad.
+        </p>
+        <p class="text-red-400 text-xs font-bold mb-8 uppercase tracking-tighter">
+            * Note: Registration fees for all events and combos are non-refundable.
         </p>
         <div class="flex flex-col gap-3">
             <button id="go-to-combo-btn" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all uppercase tracking-wider text-sm">

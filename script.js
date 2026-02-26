@@ -195,6 +195,7 @@ filterBtns.forEach(btn => {
             // badge: 'ROBOTICS',
             prizePool: '₹20K',
             entryFee: '₹300 / Team', 
+            isOnSpotOnly: true,
             regLink: 'https://forms.gle/WWNiNaqffcK8xzoS6',
             rulebook: 'cyber_kick.docx',
             teamSize: 'Up to 4 Members',
@@ -219,6 +220,7 @@ filterBtns.forEach(btn => {
             // subtitle: 'ROBOVERSE SERIES',
             // badge: 'ROBOTICS',
             prizePool: '₹20K',
+            isOnSpotOnly: true,
             entryFee: '₹300 / Team',
             teamSize: 'Up to 5 Members',
             regLink: 'https://forms.gle/VsK9cbYpfSDF9qZf9',
@@ -269,6 +271,7 @@ filterBtns.forEach(btn => {
             // subtitle: 'CIRCUIT ESCAPE CHALLENGE',
             // badge: 'CIRCUITS',
             prizePool: '₹2K+',
+            isOnSpotOnly: true,
             entryFee: '₹150 / Team', // Added entry fee as requested
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSepKLdMSU6M7CjMH-WQxCIc3MW5utn2QzAqT7YFbTtfz04bsA/viewform?usp=header',
             teamSize: '3 Members',
@@ -298,6 +301,7 @@ filterBtns.forEach(btn => {
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdLZMwZcbuRuV4rbxREqm0gFwBWnR6zoFPdVE6kdPFf18QuCQ/viewform?usp=header',
             teamSize: '2-3 Members',
             entryFee: '₹150 / team',
+            isOnSpotOnly: true,
             description: 'A high-intensity, three-stage engineering challenge designed to test visual memory, diagnostic precision, and collaborative problem-solving. Teams must navigate through rapid-fire recalls and complex physical puzzles to prove their mastery over circuit theory and real-world electronics.',
             rules: [
                 'Team Dynamics: Each team must consist of exactly 2–3 participants; report 10 minutes prior to start time.',
@@ -399,6 +403,7 @@ filterBtns.forEach(btn => {
             title: 'Circuitry Pass',
             prizePool: 'Multi-Event Access',
             entryFee: '₹200 / Team',
+            isOnSpotOnly: true,
             teamSize: '2-3 Members',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLScU8DvB7P1K0dc4vwk_10uZCQWNz9I7ByVlHvk4X-23QDf0Rw/viewform?usp=sharing&ouid=110963580985970388920',
             description: 'Ideal for small teams of 2 to 3 members, this pass offers access to two technical events to test your knowledge and problem-solving skills. The perfect choice for groups looking to compete, collaborate, and enjoy the fest together!. Registration fees are strictly non-refundable for all scenarios.',
@@ -415,7 +420,7 @@ filterBtns.forEach(btn => {
         'Cipher Pass': {
             title: 'Cipher Pass',
             prizePool: 'Multi-Event Access',
-            entryFee: '₹349 / team',
+            entryFee: '₹349 / team', 
             isOnSpotOnly: true,
             teamSize: 'Exactly 2 Members',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeeB2CM_Bp1fqQJnAuEm6jgTgX2vQbM-D9uLj1SB7EYQ2jYFg/viewform?usp=header',
@@ -438,6 +443,7 @@ filterBtns.forEach(btn => {
     
     entryFee: '₹300 / Participant',
     teamSize: 'Individual',
+            isOnSpotOnly: true,
     regLink: 'https://forms.gle/kJs6Ngi3fN4ZmGJK7', 
     description: 'This Pass is engineered for specialists. Select any TWO technical workshops to accelerate your expertise in emerging architectures, from ERP systems to autonomous AI agents. Registration fees are strictly non-refundable for all scenarios.',
     includedEvents: {
@@ -453,6 +459,7 @@ filterBtns.forEach(btn => {
     title: 'Triple Workshops',
 
     entryFee: '₹400 / Participant',
+            isOnSpotOnly: true,
     teamSize: 'Individual',
     regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSf0yuMSAfdtJwCEZL5gMu0-M41lipIGqxG51gn-KspmuNl2sQ/viewform?usp=publish-editor',
     description: 'The ultimate knowledge uplink. Gain unrestricted access to all THREE specialized workshops: Inside SAP, Cyber Security, and Zero Code Agents. Registration fees are strictly non-refundable for all scenarios.',
@@ -471,6 +478,7 @@ filterBtns.forEach(btn => {
             // subtitle: 'Table Game',
             // badge: 'GAMING',
             prizePool: '₹1,500+',
+            isOnSpotOnly: true,
             entryFee: '₹100 / team',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeCujORyc-wiRx917dg-GkGsuhCMMZVPHr4xo1_q3c2yINnfQ/viewform?usp=header',
             teamSize: '2 Members',
@@ -496,6 +504,7 @@ filterBtns.forEach(btn => {
             // badge: 'STRATEGY',
             prizePool: '₹1,500+',
             entryFee: '₹100 / Participant',
+            isOnSpotOnly: true,
             teamSize: 'Individual',
             regLink:'https://docs.google.com/forms/d/e/1FAIpQLSdjQDtznzVqg_2vu1F0hywcGkRIO80hgalCQXs2fY1ew_KqXQ/viewform?usp=header',
             description: 'Enter a high-stakes arena of foresight and cognitive endurance. This tournament is designed to test a player’s ability to calculate under pressure and outmaneuver rivals in a battle of pure logic. This event follows a competitive hierarchy system where every move dictates the path to victory or defeat.',
@@ -521,6 +530,7 @@ filterBtns.forEach(btn => {
             // subtitle: 'Knowledge Battle',
             // badge: 'TRIVIA',
             prizePool: '₹1,500+',
+            isOnSpotOnly: true,
             entryFee: '₹150 / team',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLScrnKgmu8V4mpwp8e_qgt-_zdUhL9UYCrFaPr_rVVgDnPs_iQ/viewform?usp=header',
             teamSize: '2-3 Members',
@@ -568,6 +578,7 @@ filterBtns.forEach(btn => {
             title: 'Free Fire',
             
             prizePool: '₹1,000+',
+            isOnSpotOnly: true,
             teamSize: 'Squad',
             entryFee: '₹50 / team',
             regLink:'https://docs.google.com/forms/d/e/1FAIpQLSdZbqsc7fBA7kPmkOYzgpCRUSuXiJfL4AfyGJUXBX0e56ozzA/viewform?usp=header',
@@ -590,6 +601,7 @@ filterBtns.forEach(btn => {
             // subtitle: 'VIRTUAL PITCH GLORY',
             // badge: 'ESPORTS',
             prizePool: '₹1,000+',
+            isOnSpotOnly: true,
             entryFee: '₹50 / Participant',
             teamSize: 'Individual',
             regLink:'https://docs.google.com/forms/d/e/1FAIpQLScZit1f-04dstFeMpKeRN7dD6mEE0X_urssoB7K5GeQ9OkuZA/viewform?usp=header',
@@ -617,6 +629,7 @@ filterBtns.forEach(btn => {
             // prizePool: 'Certification + Merit',
             entryFee: '₹200 / Participant',
             teamSize: 'Individual',
+            isOnSpotOnly: true,
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeUGoy5WKSOliXfghg8RCdqDxU18chcVv-3GlATkx8_K8RcNA/viewform?usp=sharing&ouid=110963580985970388920', 
             description: 'Participants will gain practical exposure to cybersecurity concepts, tools, and real-world attack scenarios. The session focuses on ethical hacking basics, system security, and threat awareness. Participants are required to bring their laptops for hands-on activities. Certificates will be awarded to all participants upon completion. Registration fees are strictly non-refundable for all scenarios.',
             // rules: [
@@ -632,6 +645,7 @@ filterBtns.forEach(btn => {
         'Inside SAP': {
             title: 'Inside SAP',
             entryFee: '₹200 / Participant',
+            isOnSpotOnly: true,
             teamSize: 'Individual',
             regLink: 'https://forms.gle/8sHnsk8rHCMdvpgo7', // Replace with your QR/Registration link
             description: 'A specialized workshop on SAP Enterprise Architecture and ERP systems. Learn how modern global businesses scale using SAP, led by industry expert Mr. Mohammed Jaffer M. Registration fees are strictly non-refundable for all scenarios.',
@@ -650,6 +664,7 @@ filterBtns.forEach(btn => {
             title: 'Zero Code Agents',
             // prizePool: 'Certification + Project Demo',
             entryFee: '₹200 / Participant',
+            isOnSpotOnly: true,
             teamSize: 'Individual',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSc87J0vB-4ncBTUL87PucEZygIK-Wz0oYvwWUSpQP61I_KjIA/viewform', 
             description: 'The session introduces the concept of intelligent AI agents and how they autonomously perform tasks. Basic understanding of AI or programming is helpful but not mandatory for this Workshop. Participants are required to bring their laptops for hands-on activities. Certificates will be awarded to all participants upon completion. Registration fees are strictly non-refundable for all scenarios.',
@@ -1131,6 +1146,4 @@ setInterval(() => {
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
 }, 1000);
-
-
 

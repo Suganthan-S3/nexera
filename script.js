@@ -403,7 +403,7 @@ filterBtns.forEach(btn => {
             title: 'Circuitry Pass',
             prizePool: 'Multi-Event Access',
             entryFee: '₹200 / Team',
-            isOnSpotOnly: true,
+            isClosed:true,
             teamSize: '2-3 Members',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLScU8DvB7P1K0dc4vwk_10uZCQWNz9I7ByVlHvk4X-23QDf0Rw/viewform?usp=sharing&ouid=110963580985970388920',
             description: 'Ideal for small teams of 2 to 3 members, this pass offers access to two technical events to test your knowledge and problem-solving skills. The perfect choice for groups looking to compete, collaborate, and enjoy the fest together!. Registration fees are strictly non-refundable for all scenarios.',
@@ -421,7 +421,7 @@ filterBtns.forEach(btn => {
             title: 'Cipher Pass',
             prizePool: 'Multi-Event Access',
             entryFee: '₹349 / team', 
-            isOnSpotOnly: true,
+            isClosed:true,
             teamSize: 'Exactly 2 Members',
             regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeeB2CM_Bp1fqQJnAuEm6jgTgX2vQbM-D9uLj1SB7EYQ2jYFg/viewform?usp=header',
             description: 'Designed for pairs, this pass gives two participants entry to two technical events to showcase skills and innovation, additionally with 50% off on one non-technical event to relax and have fun. A perfect mix of learning, competition, and entertainment for an unforgettable fest experience. Registration fees are strictly non-refundable for all scenarios.',
@@ -443,7 +443,7 @@ filterBtns.forEach(btn => {
     
     entryFee: '₹300 / Participant',
     teamSize: 'Individual',
-            isOnSpotOnly: true,
+            isClosed:true,
     regLink: 'https://forms.gle/kJs6Ngi3fN4ZmGJK7', 
     description: 'This Pass is engineered for specialists. Select any TWO technical workshops to accelerate your expertise in emerging architectures, from ERP systems to autonomous AI agents. Registration fees are strictly non-refundable for all scenarios.',
     includedEvents: {
@@ -459,7 +459,7 @@ filterBtns.forEach(btn => {
     title: 'Triple Workshops',
 
     entryFee: '₹400 / Participant',
-            isOnSpotOnly: true,
+            isClosed:true,
     teamSize: 'Individual',
     regLink: 'https://docs.google.com/forms/d/e/1FAIpQLSf0yuMSAfdtJwCEZL5gMu0-M41lipIGqxG51gn-KspmuNl2sQ/viewform?usp=publish-editor',
     description: 'The ultimate knowledge uplink. Gain unrestricted access to all THREE specialized workshops: Inside SAP, Cyber Security, and Zero Code Agents. Registration fees are strictly non-refundable for all scenarios.',
@@ -578,6 +578,7 @@ filterBtns.forEach(btn => {
             title: 'Free Fire',
             
             prizePool: '₹1,000+',
+            isOnSpotOnly: true,
             teamSize: 'Squad',
             entryFee: '₹50 / team',
             regLink:'https://docs.google.com/forms/d/e/1FAIpQLSdZbqsc7fBA7kPmkOYzgpCRUSuXiJfL4AfyGJUXBX0e56ozzA/viewform?usp=header',
@@ -600,6 +601,7 @@ filterBtns.forEach(btn => {
             // subtitle: 'VIRTUAL PITCH GLORY',
             // badge: 'ESPORTS',
             prizePool: '₹1,000+',
+            isOnSpotOnly: true,
             entryFee: '₹50 / Participant',
             teamSize: 'Individual',
             regLink:'https://docs.google.com/forms/d/e/1FAIpQLScZit1f-04dstFeMpKeRN7dD6mEE0X_urssoB7K5GeQ9OkuZA/viewform?usp=header',
@@ -1144,5 +1146,4 @@ setInterval(() => {
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
 }, 1000);
-
 
